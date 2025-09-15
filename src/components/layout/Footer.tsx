@@ -29,7 +29,7 @@ function TikTokIcon(props: React.SVGProps<SVGSVGElement>) {
 
 export default function Footer() {
   return (
-    <footer className="relative bg-black py-12 px-4 sm:px-6 lg:px-8 text-white">
+    <footer className="relative bg-black py-12 px-4 sm:px-6 lg:px-8 text-primary">
       {/* 灰白色遮罩层 */}
       <div className="absolute inset-0 bg-white/20"></div>
 
@@ -38,30 +38,30 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8">
           {/* Left Section: Company Name & Description */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <h2 className="text-2xl font-bold text-white mb-2">
+            <h2 className="text-2xl font-bold text-primary mb-2">
               YGF Australia
             </h2>
-            <p className="text-sm leading-relaxed max-w-xs text-white/90">
+            <p className="text-sm leading-relaxed max-w-xs text-primary/90">
               YGF Australia is a restaurant chain that specializes in hot pot. It was founded in 2000.
             </p>
           </div>
 
           {/* Middle Section: Contact Info */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <h3 className="text-lg font-semibold text-white mb-3">
+            <h3 className="text-lg font-semibold text-primary mb-3">
               Contact Us
             </h3>
             <div className="space-y-2 text-sm">
-              <p className="flex items-center gap-2 text-white/90">
-                <Phone className="h-4 w-4 text-white/80" />
+              <p className="flex items-center gap-2 text-primary/90">
+                <Phone className="h-4 w-4 text-primary/80" />
                 <span>+1 (555) 123-4567</span>
               </p>
-              <p className="flex items-center gap-2 text-white/90">
-                <Mail className="h-4 w-4 text-white/80" />
+              <p className="flex items-center gap-2 text-primary/90">
+                <Mail className="h-4 w-4 text-primary/80" />
                 <span>guofuyang2025@gmail.com</span>
               </p>
-              <p className="flex items-center gap-2 text-white/90">
-                <MapPin className="h-4 w-4 text-white/80" />
+              <p className="flex items-center gap-2 text-primary/90">
+                <MapPin className="h-4 w-4 text-primary/80" />
                 <span>9/1-3 Metro Pde, Mawson Lakes SA 5095,Australia</span>
               </p>
             </div>
@@ -69,20 +69,20 @@ export default function Footer() {
 
           {/* Right Section: Social Media Links */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <h3 className="text-lg font-semibold text-white mb-3">
+            <h3 className="text-lg font-semibold text-primary mb-3">
               Follow Us
             </h3>
             <div className="flex space-x-4">
-              <Link href="#" aria-label="Facebook" className="text-white/80 hover:text-white transition-colors">
+              <Link href="#" aria-label="Facebook" className="text-primary/80 hover:text-primary transition-colors">
                 <Facebook className="h-6 w-6" />
               </Link>
-              <Link href="#" aria-label="WeChat" className="text-white/80 hover:text-white transition-colors">
+              <Link href="#" aria-label="WeChat" className="text-primary/80 hover:text-primary transition-colors">
                 <WeChatIcon className="h-6 w-6" />
               </Link>
-              <Link href="#" aria-label="Instagram" className="text-white/80 hover:text-white transition-colors">
+              <Link href="#" aria-label="Instagram" className="text-primary/80 hover:text-primary transition-colors">
                 <Instagram className="h-6 w-6" />
               </Link>
-              <Link href="#" aria-label="TikTok" className="text-white/80 hover:text-white transition-colors">
+              <Link href="#" aria-label="TikTok" className="text-primary/80 hover:text-primary transition-colors">
                 <TikTokIcon className="h-6 w-6" />
               </Link>
             </div>

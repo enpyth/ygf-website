@@ -2,6 +2,7 @@ import Providers from '@/components/layout/providers';
 import { Toaster } from '@/components/ui/sonner';
 import { fontVariables } from '@/lib/font';
 import ThemeProvider from '@/components/layout/ThemeToggle/theme-provider';
+import AppClient from '@/components/layout/AppClient';
 import { cn } from '@/lib/utils';
 import type { Metadata, Viewport } from 'next';
 import NextTopLoader from 'nextjs-toploader';
@@ -57,10 +58,9 @@ export default async function RootLayout({
             disableTransitionOnChange
             enableColorScheme
           >
-            <Providers>
-              <Toaster />
+            <AppClient>
               {children}
-            </Providers>
+            </AppClient>
           </ThemeProvider>
         </NuqsAdapter>
       </body>
