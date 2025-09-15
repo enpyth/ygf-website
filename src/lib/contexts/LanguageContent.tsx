@@ -78,7 +78,7 @@ const en: Strings = {
     hero: {
       title: 'About Us',
       subtitle: 'Our Story – From Harbin to the World',
-      description: 'YGF Australia (YGF) is the pioneer and global leader of modern Malatang.\nFounded in 2000 as a small food stall in Harbin, our founders created the world\'s first "drinkable soup malatang" — a bold fusion of Sichuan spices and hearty Northeastern beef bone broth.\nFrom one humble stall, YGF grew into a nationwide sensation. By 2010, we surpassed 1,000 stores across China, and today, YGF has nearly 7,000 restaurants in more than 20 countries, introducing authentic Malatang to a global audience.',
+      description: 'Yangguofu (YGF) is the pioneer and global leader of modern Malatang.\nFounded in 2000 as a small food stall in Harbin, our founders created the world\'s first "drinkable soup malatang" — a bold fusion of Sichuan spices and hearty Northeastern beef bone broth.\nFrom one humble stall, YGF grew into a nationwide sensation. By 2010, we surpassed 1,000 stores across China, and today, YGF has nearly 7,000 restaurants in more than 20 countries, introducing authentic Malatang to a global audience.',
     },
     team: {
       title: 'Our Team',
@@ -92,7 +92,7 @@ const en: Strings = {
         button: 'Learn More',
       },
       innovation: {
-        title: 'YGF Australia in Australia',
+        title: 'Yangguofu in Australia',
         description1: 'In May 2025, YGF Australia became the exclusive master franchisee of YGF Australia.\nOur leadership team brings over 15 years of Australian F&B industry expertise, including key members who helped establish Spicy World Australia.',
         description2: 'Today, YGF operates 10 stores nationwide. By the end of 2025, we will open three more — including a AUD $2 million flagship store on Gouger Street, Adelaide\'s Chinatown, the largest Malatang restaurant in the Southern Hemisphere.\nOur flagship location will combine authentic YGF flavors with rich cultural and Australian design elements, representing a new generation of modern Malatang.',
         button: 'Explore Our Work',
@@ -264,11 +264,12 @@ const en: Strings = {
   franchisePage: {
     hero: {
       title: 'Franchise Opportunities',
-      subtitle: 'Partner with YGF Australia',
+      subtitle: 'As a YGF Australia Franchise Partner, you are more than an investor \n— you are joining the world’s largest and most recognized Malatang brand, with over 6,000 stores worldwide and rapid growth in Australia.',
 
     },
     jobDescription: {
-      title: 'By partnering with us, you gain:',
+      title: 'Partner with YGF Australia',
+      subtitle: 'As a YGF Australia Franchise Partner, you are more than an investor \n — you are joining the world’s largest and most recognized Malatang brand, with over 6,000 stores worldwide and rapid growth in Australia.',
       description1: '• Proven Business Model – a globally successful, highly replicable system tailored for the Australian market.',
       description2: '• Comprehensive Support – from site selection, store design, and staff training to supply chain and marketing campaigns.',
       description3: '• Strong Brand Power – leverage the reputation of YGF, already renowned as the world’s No.1 Malatang brand.',
@@ -499,8 +500,8 @@ const en: Strings = {
     },
     application: {
       title: 'Enquire Today',
-      subtitle: 'Thank you for your interest in partnering with YGF Australia. Please complete the form below and our Franchise Development Team will contact you shortly.',
-      formTitle: 'Become a YGF Australia Franchise Partner',
+      subtitle: 'Thank you for your interest in partnering with Yangguofu. Please complete the form below and our Franchise Development Team will contact you shortly.',
+      formTitle: 'Become a Yangguofu Franchise Partner',
       submitButton: 'Send Franchise Inquiry',
       submittingButton: 'Submitting...',
     },
