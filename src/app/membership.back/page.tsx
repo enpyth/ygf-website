@@ -112,7 +112,7 @@ export default function MembershipPage() {
 
 
                 {/* Detailed Benefits Section */}
-                <section className="py-20 bg-black/5">
+                <section className="py-20 white">
                     <div className="container mx-auto px-4">
                         <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-16">
                             {t.membershipPage.benefits.title}

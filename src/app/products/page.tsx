@@ -48,7 +48,7 @@ export default function ProductsPage() {
                 <HeroSection />
 
                 {/* 主要内容 */}
-                <main className="container mx-auto px-4 lg:px-8 xl:px-16 py-8 bg-black/5">
+                <main className="container mx-auto px-4 lg:px-8 xl:px-16 py-8 white">
                     {/* 招牌汤底部分 */}
                     <SignatureSoupBases />
 
@@ -68,9 +68,9 @@ export default function ProductsPage() {
                 </section>
                 {/* Ingredients supply chain */}
                 <section className="bg-gradient-to-b from-black/70 from-0% to-black/0 to-7%">
-                <IngredientsSupplyChain />
+                    <IngredientsSupplyChain />
 
-</section>
+                </section>
 
                 {/* 页脚 */}
                 <Footer />

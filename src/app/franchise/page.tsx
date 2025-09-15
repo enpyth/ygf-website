@@ -84,7 +84,7 @@ export default function FranchisePage() {
 
 
                 {/* Job Description Section */}
-                <section className="py-20 bg-black/5">
+                <section className="py-20 white">
                     <div className="container mx-auto px-4 lg:px-8 xl:px-16">
                         <div className="max-w-6xl mx-auto">
                             <div className="flex mb-12">

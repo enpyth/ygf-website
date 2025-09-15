@@ -83,7 +83,7 @@ export default function AboutPage() {
                 </section>
 
                 {/* Team Section */}
-                <section className="py-20 bg-black/5">
+                <section className="py-20 white">
                     <div className="container mx-auto px-4 lg:px-8 xl:px-16">
                         <div className="text-center mb-16">
                             <h2 className="text-4xl font-bold text-foreground mb-4">{t.aboutPage.team.title}</h2>
@@ -153,7 +153,7 @@ export default function AboutPage() {
                     </div>
                 </section>
 
-                
+
 
                 {/* Vision/Mission Section */}
                 <section className="py-20">
