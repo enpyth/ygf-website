@@ -87,9 +87,12 @@ export default function FranchisePage() {
                 <section className="py-20 bg-black/5">
                     <div className="container mx-auto px-4 lg:px-8 xl:px-16">
                         <div className="max-w-6xl mx-auto">
-                            <h2 className="text-3xl md:text-4xl font-bold text-foreground text-left mb-12">
-                                {t.franchisePage.jobDescription.title}
-                            </h2>
+                            <div className="flex mb-12">
+                                <div className="w-1/5"></div>
+                                <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                                    {t.franchisePage.jobDescription.title}
+                                </h2>
+                            </div>
                             <Card className="p-8 bg-white dark:bg-black">
                                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                                     <div>
