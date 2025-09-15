@@ -87,7 +87,7 @@ export default function FranchisePage() {
                 <section className="py-20 bg-black/5">
                     <div className="container mx-auto px-4 lg:px-8 xl:px-16">
                         <div className="max-w-6xl mx-auto">
-                            <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-12">
+                            <h2 className="text-3xl md:text-4xl font-bold text-foreground text-left mb-12">
                                 {t.franchisePage.jobDescription.title}
                             </h2>
                             <Card className="p-8 bg-white dark:bg-black">
@@ -123,7 +123,7 @@ export default function FranchisePage() {
                 </section>
 
                 {/* Qualifications Section */}
-                <section className="py-20">
+                {/* <section className="py-20">
                     <div className="container mx-auto px-4 lg:px-8 xl:px-16">
                         <div className="text-center mb-16">
                             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -197,7 +197,7 @@ export default function FranchisePage() {
                     </div>
                 </section>
 
-                <Separator className="bg-black/10" />
+                <Separator className="bg-black/10" /> */}
 
                 {/* Franchise Support Section */}
                 <section className="py-20">
@@ -211,7 +211,7 @@ export default function FranchisePage() {
                             </p>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-1 gap-6 max-w-4xl mx-auto">
+                        <div className="grid grid-cols-1 md:grid-cols-1 gap-3 max-w-4xl mx-auto">
                             <ExpandableCard
                                 title={t.franchisePage.franchiseSupport.locationAdvisory.title}
                                 description={t.franchisePage.franchiseSupport.locationAdvisory.description}
@@ -250,13 +250,13 @@ export default function FranchisePage() {
                 {/* FAQ Section */}
                 <section className="py-20">
                     <div className="container mx-auto px-4 lg:px-8 xl:px-16">
-                        <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                        <div className="text-center mb-8">
+                            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
                                 {t.franchisePage.faq.title}
                             </h2>
                         </div>
 
-                        <div className="grid grid-cols-1 gap-6 max-w-4xl mx-auto">
+                        <div className="grid grid-cols-1 gap-3 max-w-4xl mx-auto">
                             <FAQSection
                                 title={t.franchisePage.faq.sections.applicationProcess.title}
                                 questions={t.franchisePage.faq.sections.applicationProcess.questions}
