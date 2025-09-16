@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.ygfaus.com.au/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.ygfaus.com.au/home</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ygfaus.com.au/products</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ygfaus.com.au/franchise</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ygfaus.com.au/careers</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ygfaus.com.au/contact</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ygfaus.com.au/membership</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ygfaus.com.au/about</loc>
+    <priority>0.8</priority>
+  </url>
+  
+</urlset>
