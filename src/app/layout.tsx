@@ -14,9 +14,17 @@ const META_THEME_COLORS = {
   dark: '#09090b'
 };
 
-export const metadata: Metadata = {
-  title: 'YGF Australia',
-  description: 'YGF Australia'
+export const metadata = {
+  title: 'YGF Australia | 澳洲杨国福麻辣烫官方网站',
+  description:
+    '欢迎访问 YGF Australia 澳洲杨国福麻辣烫官方网站，查看门店地址、菜单、最新优惠与联系方式。正宗麻辣烫，为您带来家的味道。',
+  keywords: [
+    'YGF Australia',
+    '澳洲杨国福',
+    '麻辣烫',
+    'Australia Malatang',
+    '澳洲美食',
+  ],
 };
 
 export const viewport: Viewport = {
