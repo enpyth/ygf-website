@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.ygfaus.com.au/
+
+# Sitemaps
+Sitemap: https://www.ygfaus.com.au/sitemap.xml
