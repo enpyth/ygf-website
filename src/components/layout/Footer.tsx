@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Facebook,
   Instagram,
@@ -29,70 +30,84 @@ function TikTokIcon(props: React.SVGProps<SVGSVGElement>) {
 
 export default function Footer() {
   return (
-    <footer className="relative bg-black py-12 px-4 sm:px-6 lg:px-8 text-primary">
-      {/* 灰白色遮罩层 */}
-      <div className="absolute inset-0 bg-white/20"></div>
+    <footer className="relative bg-black text-white">
+      {/* Footer Banner Image */}
+      <div className="w-full h-auto">
+        <Image
+          src="/footer/FooterBanner.png"
+          alt="YGF Footer Banner"
+          width={1920}
+          height={400}
+          className="w-full h-auto object-cover"
+          priority
+        />
+      </div>
 
-      <div className="container mx-auto relative z-10">
-        {/* Top Section: Company Info, Contact, Social Media */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8">
-          {/* Left Section: Company Name & Description */}
-          <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <h2 className="text-2xl font-bold text-primary mb-2">
-              YGF Australia
-            </h2>
-            <p className="text-sm leading-relaxed max-w-xs text-primary/90">
-              YGF Australia is a restaurant chain that specializes in hot pot. It was founded in 2000.
-            </p>
-          </div>
+      {/* Footer Content */}
+      <div className="relative bg-black py-12 px-4 sm:px-6 lg:px-8">
+        {/* 灰白色遮罩层 */}
+        {/* <div className="absolute inset-0 bg-white/20"></div> */}
 
-          {/* Middle Section: Contact Info */}
-          <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <h3 className="text-lg font-semibold text-primary mb-3">
-              Contact Us
-            </h3>
-            <div className="space-y-2 text-sm">
-              <p className="flex items-center gap-2 text-primary/90">
-                <Phone className="h-4 w-4 text-primary/80" />
-                <span>+1 (555) 123-4567</span>
+        <div className="container mx-auto relative z-10">
+          {/* Top Section: Company Info, Contact, Social Media */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8">
+            {/* Left Section: Company Name & Description */}
+            <div className="flex flex-col items-center md:items-start text-center md:text-left">
+              <h2 className="text-2xl font-bold text-white mb-2">
+                YGF Australia
+              </h2>
+              <p className="text-sm leading-relaxed max-w-xs text-white">
+                YGF Australia is a restaurant chain that specializes in hot pot. It was founded in 2000.
               </p>
-              <p className="flex items-center gap-2 text-primary/90">
-                <Mail className="h-4 w-4 text-primary/80" />
-                <span>guofuyang2025@gmail.com</span>
-              </p>
-              <p className="flex items-center gap-2 text-primary/90">
-                <MapPin className="h-4 w-4 text-primary/80" />
-                <span>9/1-3 Metro Pde, Mawson Lakes SA 5095,Australia</span>
-              </p>
+            </div>
+
+            {/* Middle Section: Contact Info */}
+            <div className="flex flex-col items-center md:items-start text-center md:text-left">
+              <h3 className="text-lg font-semibold text-white mb-3">
+                Contact Us
+              </h3>
+              <div className="space-y-2 text-sm">
+                <p className="flex items-center gap-2 text-white/90">
+                  <Phone className="h-4 w-4 text-white/80" />
+                  <span>+1 (555) 123-4567</span>
+                </p>
+                <p className="flex items-center gap-2 text-white/90">
+                  <Mail className="h-4 w-4 text-white/80" />
+                  <span>guofuyang2025@gmail.com</span>
+                </p>
+                <p className="flex items-center gap-2 text-white/90">
+                  <MapPin className="h-4 w-4 text-white/80" />
+                  <span>9/1-3 Metro Pde, Mawson Lakes SA 5095,Australia</span>
+                </p>
+              </div>
+            </div>
+
+            {/* Right Section: Social Media Links */}
+            <div className="flex flex-col items-center md:items-start text-center md:text-left">
+              <h3 className="text-lg font-semibold text-white mb-3">
+                Follow Us
+              </h3>
+              <div className="flex space-x-4">
+                <Link href="#" aria-label="Facebook" className="text-white/80 hover:text-white transition-colors">
+                  <Facebook className="h-6 w-6" />
+                </Link>
+                <Link href="#" aria-label="WeChat" className="text-white/80 hover:text-white transition-colors">
+                  <WeChatIcon className="h-6 w-6" />
+                </Link>
+                <Link href="#" aria-label="Instagram" className="text-white/80 hover:text-white transition-colors">
+                  <Instagram className="h-6 w-6" />
+                </Link>
+                <Link href="#" aria-label="TikTok" className="text-white/80 hover:text-white transition-colors">
+                  <TikTokIcon className="h-6 w-6" />
+                </Link>
+              </div>
             </div>
           </div>
 
-          {/* Right Section: Social Media Links */}
-          <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <h3 className="text-lg font-semibold text-primary mb-3">
-              Follow Us
-            </h3>
-            <div className="flex space-x-4">
-              <Link href="#" aria-label="Facebook" className="text-primary/80 hover:text-primary transition-colors">
-                <Facebook className="h-6 w-6" />
-              </Link>
-              <Link href="#" aria-label="WeChat" className="text-primary/80 hover:text-primary transition-colors">
-                <WeChatIcon className="h-6 w-6" />
-              </Link>
-              <Link href="#" aria-label="Instagram" className="text-primary/80 hover:text-primary transition-colors">
-                <Instagram className="h-6 w-6" />
-              </Link>
-              <Link href="#" aria-label="TikTok" className="text-primary/80 hover:text-primary transition-colors">
-                <TikTokIcon className="h-6 w-6" />
-              </Link>
-            </div>
-          </div>
-        </div>
+          {/* <Separator className="my-8 bg-white/20" /> */}
 
-        {/* <Separator className="my-8 bg-white/20" /> */}
-
-        {/* Bottom Bar: Copyright, Links, Language Selector */}
-        {/* <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-4 text-sm">
+          {/* Bottom Bar: Copyright, Links, Language Selector */}
+          {/* <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-4 text-sm">
           
           <div className="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
             <p className="text-white/80">
@@ -121,6 +136,7 @@ export default function Footer() {
             
           </div>
         </div> */}
+        </div>
       </div>
     </footer>
   );

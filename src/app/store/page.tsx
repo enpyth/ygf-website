@@ -25,6 +25,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn'
 import SearchIcon from '@mui/icons-material/Search'
 import { useRouter } from 'next/navigation'
 import { stores, getStoreIcon } from './data'
+import { ColorSeparator } from '@/components/ui/color-separator'
 
 export default function StorePage() {
     const t = useI18n()
@@ -54,7 +55,7 @@ export default function StorePage() {
 
                 <div className="container mx-auto px-16 lg:px-16 xl:px-16 py-10">
                     {/* Search Bar */}
-                    <Box sx={{ mb: 4 }}>
+                    <Box sx={{ mb: 4, display: 'flex', gap: 2 }}>
                         <TextField
                             fullWidth
                             placeholder="Search stores by name or location..."
@@ -104,6 +105,9 @@ export default function StorePage() {
                                 }
                             }}
                         />
+                        <Button variant="contained" color="primary" sx={{ mt: 1, mb: 1 }}>
+                            Search
+                        </Button>
                     </Box>
 
                     <Box sx={{ display: 'flex', gap: 4, flexDirection: { xs: 'column', md: 'row' } }}>
@@ -186,6 +190,10 @@ export default function StorePage() {
                     </Box>
                 </div>
             </main>
+            <ColorSeparator
+            backgroundColor="bg-[#A1221F]"
+            minHeight="min-h-[325px]"
+                />
             <Footer />  
         </>
     )
