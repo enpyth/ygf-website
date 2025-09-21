@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
+import React from 'react'
 
 interface ImageTextSectionProps {
     image: {
@@ -105,8 +106,13 @@ export function TextLeftImageRight({
                     <h2 className={cn("text-3xl font-bold mb-4", titleColor)}>
                         {title}
                     </h2>
-                    <p className={cn("text-lg text-left leading-relaxed", descriptionColor)}>
-                        {description}
+                    <p className="text-lg text-left text-muted-foreground leading-relaxed mb-6">
+                        {description.split('\n').map((line, index) => (
+                            <React.Fragment key={index}>
+                                {line}
+                                <br />
+                            </React.Fragment>
+                        ))}
                     </p>
                 </div>
             </div>
@@ -157,11 +163,17 @@ export function ImageLeftTextRightWithButton({
             {/* 文字部分 */}
             <div className="w-1/2 flex flex-col justify-center items-center p-8 bg-background">
                 <div className="max-w-md text-center">
+                    
                     <h2 className="text-3xl font-bold text-foreground mb-4">
                         {title}
                     </h2>
                     <p className="text-lg text-left text-muted-foreground leading-relaxed mb-6">
-                        {description}
+                        {description.split('\n').map((line, index) => (
+                            <React.Fragment key={index}>
+                                {line}
+                                <br />
+                            </React.Fragment>
+                        ))}
                     </p>
                     <button
                         onClick={onButtonClick}
