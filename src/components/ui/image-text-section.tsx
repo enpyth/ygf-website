@@ -55,7 +55,7 @@ export function ImageTextSection({
           <h2 className={cn("text-3xl font-bold mb-4", titleColor)}>{title}</h2>
           <p
             className={cn(
-              "text-lg text-left leading-relaxed",
+              "text-lg text-left leading-relaxed whitespace-pre-line",
               descriptionColor
             )}
           >

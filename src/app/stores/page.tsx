@@ -43,7 +43,7 @@ export default function StorePage() {
     const selected = filteredStores[selectedIndex] || filteredStores[0]
     const backgroundImage = [
         {
-            src: "/about/title.png",
+            src: "/Banner.png",
             alt: "Background Image"
         },
     ]
@@ -51,7 +51,9 @@ export default function StorePage() {
         <>
             <Header />
             <main className="min-h-screen bg-background">
-                <PageBanner title={t.storePage.hero.title} backgroundImage={backgroundImage[0]} />
+                <div className="bg-black">
+                    <PageBanner title="Our Stores" backgroundImage={backgroundImage[0]} />
+                </div>
 
                 <div className="container mx-auto px-16 lg:px-16 xl:px-16 py-10">
                     {/* Search Bar */}

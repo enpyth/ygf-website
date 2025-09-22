@@ -68,7 +68,7 @@ export default function PublicHeader() {
                                         <Link href="/products" className="w-full">{t.header.products}</Link>
                                     </DropdownMenuItem>
                                     <DropdownMenuItem asChild>
-                                        <Link href="/store" className="w-full">{t.header.store}</Link>
+                                        <Link href="/stores" className="w-full">{t.header.store}</Link>
                                     </DropdownMenuItem>
                                     
                                     <DropdownMenuItem asChild>
@@ -117,7 +117,7 @@ export default function PublicHeader() {
                                 <Link href="/products">{t.header.products}</Link>
                             </Button>
                             <Button variant="ghost" size="lg" asChild className="text-md text-bold text-white hover:bg-white/10 hover:text-white data-[state=open]:bg-white">
-                                <Link href="/store">{t.header.store}</Link>
+                                <Link href="/stores">{t.header.store}</Link>
                             </Button>
                             
                             <Button variant="ghost" size="lg" asChild className="text-md text-bold text-white hover:bg-white/10 hover:text-white data-[state=open]:bg-white">
@@ -171,7 +171,7 @@ export default function PublicHeader() {
                                     <Link href="/products" className="w-full">{t.header.products}</Link>
                                 </DropdownMenuItem>
                                 <DropdownMenuItem asChild>
-                                    <Link href="/store" className="w-full">{t.header.store}</Link>
+                                    <Link href="/stores" className="w-full">{t.header.store}</Link>
                                 </DropdownMenuItem>
                                 <DropdownMenuItem asChild>
                                     <Link href="/franchise" className="w-full">{t.header.franchise}</Link>
