@@ -99,11 +99,11 @@ export function TextLeftImageRight({
   className,
   textBackgroundColor = "bg-background",
   titleColor = "text-foreground",
-  descriptionColor = "text-muted-foreground",
+//   descriptionColor = "text-muted-foreground",
 }: Omit<ImageTextSectionProps, "variant">) {
   return (
     <section
-      className={cn("w-full flex overflow-hidden m-0 p-0 h-135", className)}
+      className={cn("w-full flex overflow-hidden m-0 p-0 h-85", className)}
     >
       {/* 文字部分 */}
       <div
@@ -152,7 +152,7 @@ export function ImageLeftTextRightWithButton({
 }) {
   return (
     <section
-      className={cn("w-full flex overflow-hidden m-0 p-0 h-135", className)}
+      className={cn("w-full flex overflow-hidden m-0 p-0 h-85", className)}
     >
       {/* 图片部分 */}
       <div className="w-1/2 relative overflow-hidden">
@@ -221,7 +221,7 @@ export function TextLeftImageRightWithButton({
 }) {
   return (
     <section
-      className={cn("w-full flex overflow-hidden m-0 p-0 h-135", className)}
+      className={cn("w-full flex overflow-hidden m-0 p-0 h-85", className)}
     >
       {/* 文字部分 */}
       <div className="w-1/2 flex flex-col justify-center items-center p-8 bg-background">

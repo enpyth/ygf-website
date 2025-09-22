@@ -14,6 +14,9 @@ import {
     ApplicationProcessSection,
     ApplicationFormSection
 } from '@/features/franchise'
+import { TextLeftImageRight } from '@/components/ui/image-text-section'
+import { ColorSeparator } from '@/components/ui/color-separator'
+
 
 export default function FranchisePage() {
     const t = useI18n()
@@ -61,10 +64,26 @@ export default function FranchisePage() {
             <Header />
             <main className="min-h-screen bg-background">
                 <PageBanner title={t.franchisePage.hero.title} backgroundImage={backgroundImage[0]} />
-                <JobDescriptionSection />
-                <FranchiseSupportSection />
-                <Separator className="bg-black/10" />
-                <FAQSection />
+                <ColorSeparator
+                    title={t.franchisePage.hero.title}
+                    description={t.franchisePage.hero.subtitle}
+                    backgroundColor="bg-[#82000C]"
+                    titleColor="text-white"
+                    descriptionColor="text-white"
+                />
+                <TextLeftImageRight
+                    textBackgroundColor="bg-[#82000C]"
+                    image={backgroundImage[0]}
+                    title={t.franchisePage.hero.title}
+                    description={t.franchisePage.hero.subtitle}
+                    titleColor="text-white"
+                    descriptionColor="text-white"
+                    
+                />
+                <ColorSeparator
+                    backgroundColor="bg-[#82000C]"
+                />
+                <FAQSection/>
                 <Separator className="bg-black/10" />
                 <FranchiseeStoriesSection />
                 <Separator className="bg-black/10" />

@@ -2,7 +2,8 @@
 
 import { useState } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { ChevronDown, ChevronUp } from 'lucide-react'
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp'
 import { cn } from '@/lib/utils'
 
 interface FAQQuestion {
@@ -26,7 +27,7 @@ export function FAQSection({ title, questions, className }: FAQSectionProps) {
     return (
         <Card
             className={cn(
-                "cursor-pointer transition-all duration-300 hover:shadow-lg bg-white dark:bg-black",
+                "cursor-pointer transition-all duration-300 bg-transparent border-0 border-t border-white text-white rounded-none",
                 className
             )}
             onClick={toggleExpanded}
@@ -36,9 +37,9 @@ export function FAQSection({ title, questions, className }: FAQSectionProps) {
                     <span>{title}</span>
                     <div className="flex items-center">
                         {isExpanded ? (
-                            <ChevronUp className="w-5 h-2 text-muted-foreground" />
+                            <ArrowDropUpIcon className="text-white" fontSize="medium" />
                         ) : (
-                            <ChevronDown className="w-5 h-5 text-muted-foreground" />
+                            <ArrowDropDownIcon className="text-white" fontSize="medium" />
                         )}
                     </div>
                 </CardTitle>
@@ -46,15 +47,15 @@ export function FAQSection({ title, questions, className }: FAQSectionProps) {
             <CardContent className="pt-0">
                 <div
                     className={cn(
-                        "overflow-hidden transition-all duration-300 ease-in-out",
+                        "overflow-hidden transition-all duration-300 ease-in-out text-white",
                         isExpanded ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"
                     )}
                 >
                     <div className="space-y-6">
                         {questions.map((faq, index) => (
-                            <div key={index} className="border-b border-gray-200 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0">
-                                <h4 className="font-semibold text-foreground mb-2">{faq.question}</h4>
-                                <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
+                            <div key={index} className="text-white border-b border-transparent pb-4 last:border-b-0 last:pb-0">
+                                <h4 className="font-semibold text-white mb-2">{faq.question}</h4>
+                                <p className="text-white leading-relaxed">{faq.answer}</p>
                             </div>
                         ))}
                     </div>

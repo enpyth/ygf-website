@@ -7,15 +7,15 @@ export function FAQSection() {
     const t = useI18n()
 
     return (
-        <section className="py-20">
+        <section className="py-20 bg-black">
             <div className="container mx-auto px-4 lg:px-8 xl:px-16">
                 <div className="text-center mb-8">
-                    <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                    <h2 className="text-3xl text-white md:text-4xl font-bold text-foreground">
                         {t.franchisePage.faq.title}
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-1 gap-3 max-w-4xl mx-auto">
+                <div className="grid grid-cols-1 gap-3 max-w-4xl mx-auto text-white">
                     <FAQSectionComponent
                         title={t.franchisePage.faq.sections.applicationProcess.title}
                         questions={t.franchisePage.faq.sections.applicationProcess.questions}
