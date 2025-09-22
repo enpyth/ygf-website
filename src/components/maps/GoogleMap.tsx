@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Loader } from '@googlemaps/js-api-loader'
 import { Box, Typography, Button } from '@mui/material'
 import { useRouter } from 'next/navigation'
-import { Store } from '@/app/store/data'
+import { Store } from '@/app/stores/data'
 
 interface GoogleMapProps {
     stores: Store[]

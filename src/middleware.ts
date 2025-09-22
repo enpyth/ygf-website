@@ -44,7 +44,7 @@ export async function middleware(request: NextRequest) {
     '/franchise',
     '/membership',
     '/products',
-    '/store',
+    '/stores',
     '/auth',
     '/dashboard',
     '/api'
