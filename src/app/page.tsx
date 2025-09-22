@@ -2,7 +2,7 @@
 
 import Header from '@/components/layout/public-header'
 import Footer from '@/components/layout/Footer'
-import PageBanner  from '@/components/layout/PageBanner'
+import PageBanner  from '@/components/layout/PageBanner2'
 import HomePageBanner from '@/features/home/Banner-shadcn'
 import { ImageLeftTextRightWithButton, TextLeftImageRightWithButton } from '@/components/ui/image-text-section'
 import { TextImage13, TextImage13WithButton } from '@/components/ui/text-image-1-3'
@@ -13,9 +13,13 @@ export default function HomePage() {
       alt: "Background Image"
     },
   ]
-  const brandImage = [
+  const moduleImage = [
     {
-      src: "/home/brand.png",
+      src: "/home/module1.png",
+      alt: "Brand Image"
+    },
+    {
+      src: "/home/module2.jpg",
       alt: "Brand Image"
     },
   ]
@@ -41,32 +45,25 @@ export default function HomePage() {
         {/* <BrandSection /> */}
         {/* <TestimonialsSection /> */}
         <ImageLeftTextRightWithButton
-          image={brandImage[0]}
+          image={moduleImage[0]}
           title="Our Brand"
           description="With nearly 7,000 stores worldwide, YGF is bringing the authentic taste of hotpot to Australia — fresh, bold, and made for everyone."
           buttonText="LEARN MORE"
+          redirectTo="/franchise"
         />
         <TextLeftImageRightWithButton
-          image={brandImage[0]}
+          image={moduleImage[1]}
           title="Our Products"
           description="Where taste meets wellness — fresh ingredients, bold flavors, and endless choices for a healthy, delicious hotpot experience."
           buttonText="LEARN MORE"
+          redirectTo="/products"
         />
         <div style={{ position: 'relative' }}>
           <PageBanner
-            title={'Our News\nGet 20% OFF ALL DISHES'}
+            title={'Our News'}
+            subtitle="Get 20% OFF ALL DISHES"
             backgroundImage={NewsImage[0]}
-          />
-          <div
-            style={{
-              position: 'absolute',
-              top: 0,
-              right: 0,
-              bottom: 0,
-              left: 0,
-              backgroundColor: 'rgba(139, 80, 80, 0.47)',
-              pointerEvents: 'none'
-            }}
+            redirectTo="/franchise"
           />
         </div>
         <div style={{ position: 'relative' }}>

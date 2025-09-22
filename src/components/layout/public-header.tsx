@@ -59,6 +59,9 @@ export default function PublicHeader() {
                                 </DropdownMenuTrigger>
                                 <DropdownMenuContent align="end" className="w-56">
                                     <DropdownMenuItem asChild>
+                                        <Link href="/" className="w-full">{t.header.home}</Link>
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem asChild>
                                         <Link href="/about" className="w-full">{t.header.about}</Link>
                                     </DropdownMenuItem>
                                     <DropdownMenuItem asChild>
@@ -104,6 +107,9 @@ export default function PublicHeader() {
                         </Link> */}
                         <Separator orientation="vertical" className="h-4 bg-white/20" />
                         <nav className="hidden md:flex items-center gap-2">
+                            <Button variant="ghost" size="lg" asChild className="text-md text-bold text-white hover:bg-white/10 hover:text-white data-[state=open]:bg-white">
+                                <Link href="/">Home</Link>
+                            </Button>
                             <Button variant="ghost" size="lg" asChild className="text-md text-bold text-white hover:bg-white/10 hover:text-white data-[state=open]:bg-white">
                                 <Link href="/about">{t.header.about}</Link>
                             </Button>
@@ -155,6 +161,9 @@ export default function PublicHeader() {
                                 </Button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align="end" className="w-56">
+                                <DropdownMenuItem asChild>
+                                    <Link href="/" className="w-full">Home</Link>
+                                </DropdownMenuItem>
                                 <DropdownMenuItem asChild>
                                     <Link href="/about" className="w-full">{t.header.about}</Link>
                                 </DropdownMenuItem>

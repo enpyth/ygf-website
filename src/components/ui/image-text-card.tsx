@@ -23,8 +23,8 @@ export function ImageTextCard({
     textRatio = 1,
 }: ImageTextCardProps) {
     return (
-        <Card className={cn("w-full max-w-sm mx-auto shadow-lg", className)}>
-            <CardContent className="p-0">
+        <Card className={cn("w-full max-w-sm mx-auto shadow-lg overflow-hidden py-0", className)}>
+            <CardContent className="p-0 m-0 px-0">
                 {/* Image Section */}
                 <div
                     className="w-full overflow-hidden"
@@ -42,9 +42,8 @@ export function ImageTextCard({
 
                 {/* Text Section */}
                 <div
-                    className="p-4"
+                    className="p-2"
                     style={{
-                        minHeight: `${200 * textRatio}px`,
                         display: 'flex',
                         flexDirection: 'column',
                         justifyContent: 'center'

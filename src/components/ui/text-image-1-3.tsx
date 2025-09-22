@@ -61,20 +61,20 @@ export function TextImage13({
                 {/* 三色遮罩层 */}
                 <div className="absolute inset-0 flex">
                     {/* 左侧灰白色遮罩 */}
-                    <div className="w-1/3 bg-gray-500/40 flex items-center justify-center">
-                        <p className="text-white text-lg font-medium px-4 text-center">
+                    <div className="w-1/3 bg-white/20 flex items-center justify-center p-8">
+                        <p className="text-white text-lg font-medium italic px-6 py-4 text-center">
                             {description1}
                         </p>
                     </div>
                     {/* 中间主题色遮罩 */}
-                    <div className="w-1/3 bg-primary/60 flex items-center justify-center">
-                        <p className="text-white text-lg font-medium px-4 text-center">
+                    <div className="w-1/3 bg-red-900/80 flex items-center justify-center p-8">
+                        <p className="text-white text-lg font-medium italic px-6 py-4 text-center">
                             {description2}
                         </p>
                     </div>
                     {/* 右侧灰白色遮罩 */}
-                    <div className="w-1/3 bg-gray-500/40 flex items-center justify-center">
-                        <p className="text-white text-lg font-medium px-4 text-center">
+                    <div className="w-1/3 bg-white/20 flex items-center justify-center p-8">
+                        <p className="text-white text-lg font-medium italic px-6 py-4 text-center">
                             {description3}
                         </p>
                     </div>
@@ -132,20 +132,20 @@ export function TextImage13WithButton({
                 {/* 三色遮罩层 */}
                 <div className="absolute inset-0 flex">
                     {/* 左侧灰白色遮罩 */}
-                    <div className="w-1/3 bg-white/20 flex items-center justify-center">
-                        <p className="text-white text-lg font-medium px-4 text-center">
+                    <div className="w-1/3 bg-white/20 flex items-center justify-center p-8">
+                        <p className="text-white text-lg font-medium italic px-6 py-4 text-center">
                             {description1}
                         </p>
                     </div>
                     {/* 中间主题色遮罩 */}
-                    <div className="w-1/3 bg-primary/60 flex items-center justify-center">
-                        <p className="text-white text-lg font-medium px-4 text-center">
+                    <div className="w-1/3 bg-red-900/60 flex items-center justify-center p-8">
+                        <p className="text-white text-lg font-medium italic px-6 py-4 text-center">
                             {description2}
                         </p>
                     </div>
                     {/* 右侧灰白色遮罩 */}
-                    <div className="w-1/3 bg-white/20 flex items-center justify-center">
-                        <p className="text-white text-lg font-medium px-4 text-center">
+                    <div className="w-1/3 bg-white/20 flex items-center justify-center p-8">
+                        <p className="text-white text-lg font-medium italic px-6 py-4 text-center">
                             {description3}
                         </p>
                     </div>

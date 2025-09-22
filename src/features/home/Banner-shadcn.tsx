@@ -18,7 +18,7 @@ export default function HomePageBanner({ title, subtitle, backgroundImage }: Pag
     
     const t = useI18n()
     return (
-        <section className="relative py-75 overflow-hidden mb-1">
+        <section className="relative py-130 overflow-hidden mb-1">
             {/* Background Image */}
             {backgroundImage && (
                 <div className="absolute inset-0 z-0">

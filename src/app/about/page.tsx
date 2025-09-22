@@ -1,180 +1,172 @@
-'use client'
+"use client";
 
-import Header from '@/components/layout/public-header'
-import Footer from '@/components/layout/Footer'
-import PageBanner from '@/components/layout/PageBanner'
-import { useI18n } from '@/lib/contexts/LanguageContent'
-import React from 'react'
+import Header from "@/components/layout/public-header";
+import Footer from "@/components/layout/Footer";
+import PageBanner from "@/components/layout/PageBanner";
+import { useI18n } from "@/lib/contexts/LanguageContent";
+import React from "react";
 import {
-    Timeline,
-    TimelineContent,
-    TimelineDate,
-    TimelineHeader,
-    TimelineIndicator,
-    TimelineItem,
-    TimelineSeparator,
-    TimelineTitle,
-} from "@/components/ui/timeline"
-import { ImageTextCard } from "@/components/ui/image-text-card"
+  Timeline,
+  TimelineContent,
+  TimelineDate,
+  TimelineHeader,
+  TimelineIndicator,
+  TimelineItem,
+  TimelineSeparator,
+  TimelineTitle,
+} from "@/components/ui/timeline";
+import { ImageTextCard } from "@/components/ui/image-text-card";
 import {
-    BrandStorySection,
-    JourneySection,
-    InnovationSection,
-    TeamSection,
-    MissionSection
-} from '@/features/about'
-import { ImageLeftTextRight } from '@/components/ui/image-text-section'
+  BrandStorySection,
+  JourneySection,
+  InnovationSection,
+  TeamSection,
+  MissionSection,
+} from "@/features/about";
+import { ImageLeftTextRight } from "@/components/ui/image-text-section";
 
-// Timeline data with 5 time points
-const timelineItems = [
-    {
-        id: 1,
-        date: "Jan 2020",
-        title: "Company Founded",
-        description: "Started our journey with a vision to revolutionize the industry."
+// Unified timeline data structure combining both timeline and card information
+const timelineData = [
+  {
+    id: 1,
+    date: "Year 2003",
+    image: {
+      src: "/timeline/tl-1.png",
+      alt: "Company founding moment",
     },
-    {
-        id: 2,
-        date: "Jun 2021",
-        title: "First Product Launch",
-        description: "Launched our flagship product to the market."
+    cardText:
+      "In 2003, the first YGF hotpot restaurant was opened in Harbin, China, and became an instant local hit.",
+  },
+  {
+    id: 2,
+    date: "Year 2009",
+    image: {
+      src: "/timeline/tl-2.png",
+      alt: "Product launch celebration",
     },
-    {
-        id: 3,
-        date: "Dec 2022",
-        title: "Series A Funding",
-        description: "Secured $10M in Series A funding to accelerate growth."
+    cardText:
+      "In 2009, Mr. Guofu Yang has registered his name as a trademark, launched a nationwide franchise program, and built standardised soup base factories and logistics systems.",
+  },
+  {
+    id: 3,
+    date: "Year 2010",
+    image: {
+      src: "/timeline/tl-3.png",
+      alt: "Series A funding announcement",
     },
-    {
-        id: 4,
-        date: "Mar 2023",
-        title: "International Expansion",
-        description: "Expanded operations to 15 countries worldwide."
+    cardText:
+      "By 2010, YGF had over 1,000 stores, expanding from its Northeastern roots to become a household name across China.",
+  },
+  {
+    id: 4,
+    date: "Year 2017",
+    image: {
+      src: "/timeline/tl-4.png",
+      alt: "International office opening",
     },
-    {
-        id: 5,
-        date: "Sep 2024",
-        title: "IPO Preparation",
-        description: "Preparing for initial public offering."
+    cardText: "The first YGF international store opened in Canada.",
+  },
+  {
+    id: 5,
+    date: "Year 2025",
+    image: {
+      src: "/timeline/tl-5.png",
+      alt: "IPO preparation meeting",
     },
-]
-
-// Card data for the 5 cards above timeline
-const cardItems = [
-    {
-        image: {
-            src: "/images/timeline/founded.jpg",
-            alt: "Company founding moment"
-        },
-        text: "We started our journey with a vision to revolutionize the industry and create innovative solutions."
+    cardText:
+      "By 2025, YGF operates nearly 7,000 stores in over 20 countries worldwide.",
+  },
+  {
+    id: 6,
+    date: "Year 2026",
+    image: {
+      src: "/timeline/tl-5.png",
+      alt: "IPO preparation meeting",
     },
-    {
-        image: {
-            src: "/images/timeline/launch.jpg",
-            alt: "Product launch celebration"
-        },
-        text: "Our first product launch marked a milestone in our company's growth and market presence."
-    },
-    {
-        image: {
-            src: "/images/timeline/funding.jpg",
-            alt: "Series A funding announcement"
-        },
-        text: "Securing Series A funding enabled us to scale our operations and reach new markets."
-    },
-    {
-        image: {
-            src: "/images/timeline/expansion.jpg",
-            alt: "International office opening"
-        },
-        text: "Our international expansion brought our solutions to customers across 15 countries."
-    },
-    {
-        image: {
-            src: "/images/timeline/ipo.jpg",
-            alt: "IPO preparation meeting"
-        },
-        text: "Preparing for IPO represents the next chapter in our company's growth story."
-    },
-]
+    cardText:
+      "TBC",
+  },
+];
 
 export function TimelineSection() {
-    return (
-        <div className="container mx-auto py-8 pl-6 pr-6">
-            <h2 className="text-3xl font-bold mb-8 text-center text-white">Our Brand Story</h2>
+  return (
+    <div className="container mx-auto py-8 pl-6 pr-6">
+      <h2 className="text-3xl font-bold mb-8 text-center text-white">
+        Our Brand Story
+      </h2>
 
-            {/* 5 Cards above timeline */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-4">
-                {cardItems.map((item, index) => (
-                    <ImageTextCard
-                        className="h-100"
-                        key={index}
-                        image={item.image}
-                        text={item.text}
-                        imageRatio={1}
-                        textRatio={1}
-                    />
-                ))}
-            </div>
+      {/* Cards above timeline - dynamically generated from timelineData */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 mb-4">
+        {timelineData.map((item, index) => (
+          <ImageTextCard
+            className="h-100"
+            key={item.id}
+            image={item.image}
+            text={item.cardText}
+            imageRatio={1}
+            textRatio={1}
+          />
+        ))}
+      </div>
 
-            {/* Simple Timeline */}
-            <Timeline defaultValue={5} orientation="horizontal" className="text-white">
-                {timelineItems.map((item) => (
-                    <TimelineItem key={item.id} step={item.id}>
-                        <TimelineHeader>
-                            <TimelineSeparator />
-                            <TimelineDate>{item.date}</TimelineDate>
-                            
-                            <TimelineIndicator />
-                        </TimelineHeader>
-                        
-                    </TimelineItem>
-                ))}
-            </Timeline>
-        </div>
-    )
+      {/* Simple Timeline - dynamically generated from timelineData */}
+      <Timeline
+        defaultValue={timelineData.length}
+        orientation="horizontal"
+        className="text-white"
+      >
+        {timelineData.map((item) => (
+          <TimelineItem key={item.id} step={item.id}>
+            <TimelineHeader>
+              <TimelineSeparator />
+              <TimelineDate>{item.date}</TimelineDate>
+
+              <TimelineIndicator />
+            </TimelineHeader>
+          </TimelineItem>
+        ))}
+      </Timeline>
+    </div>
+  );
 }
 
 export default function AboutPage() {
-    const t = useI18n()
-    const backgroundImage = [
-        {
-            src: "/Banner.png",
-            alt: "Background Image"
-        },
-    ]
+  const t = useI18n();
+  const backgroundImage = [
+    {
+      src: "/Banner.png",
+      alt: "Background Image",
+    },
+  ];
 
-    return (
-        <>
-            <Header />
-            <main className="min-h-screen bg-black">
-                <PageBanner title={t.aboutPage.hero.title} backgroundImage={backgroundImage[0]} />
-                <TimelineSection />
-                <div className="bg-white">
-                    <TeamSection />
-                </div>
-                <ImageLeftTextRight
-                    textBackgroundColor='bg-[#A1221F]'
-                    titleColor='text-white'
-                    descriptionColor='text-white'
-                    title="Looking Ahead"
-                    description={[
-                        "• November 2025: Marion store opens (South Australia)",
-                        "• Flagship on Gouger Street, Adelaide, plus Brisbane CBD launch",
-                        "• Continued growth with two new SA stores",
-                        "• Sydney flagship opening",
-                        "• 30 YGF stores nationwide, establishing YGF as the leading Malatang brand in Australia",
-                    ].map((line, index) => (
-                        <React.Fragment key={index}>
-                            {line}
-                            <br />
-                        </React.Fragment>
-                    ))}
-                    image={backgroundImage[0]}
-                />
-
-            </main>
-            <Footer />
-        </>
-    )
+  return (
+    <>
+      <Header />
+      <main className="min-h-screen bg-black">
+        <PageBanner
+          title={t.aboutPage.hero.title}
+          backgroundImage={backgroundImage[0]}
+        />
+        <TimelineSection />
+        <div className="bg-white">
+          <TeamSection />
+        </div>
+        <ImageLeftTextRight
+          textBackgroundColor="bg-[#A1221F]"
+          titleColor="text-white"
+          descriptionColor="text-white"
+          title="Looking Ahead"
+          description={[
+            "• November 2025: Marion store opens (South Australia)",
+            "• Flagship on Gouger Street, Adelaide, plus Brisbane CBD launch",
+            "• Continued growth with two new SA stores",
+            "• Sydney flagship opening",
+            "• 30 YGF stores nationwide, establishing YGF as the leading Malatang brand in Australia",
+          ].join("\n")}
+          image={backgroundImage[0]}
+        />
+      </main>
+      <Footer />
+    </>
+  );
 }
