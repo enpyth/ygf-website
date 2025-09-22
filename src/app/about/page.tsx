@@ -1,180 +1,172 @@
-'use client'
+"use client";
 
-import Header from '@/components/layout/public-header'
-import Footer from '@/components/layout/Footer'
-import { Card, CardContent, CardHeader } from '@/components/ui/card'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { useI18n } from '@/lib/contexts/LanguageContent'
-import PageBanner from '@/components/layout/PageBanner'
+import Header from "@/components/layout/public-header";
+import Footer from "@/components/layout/Footer";
+import PageBanner from "@/components/layout/PageBanner";
+import { useI18n } from "@/lib/contexts/LanguageContent";
+import React from "react";
+import {
+  Timeline,
+  TimelineContent,
+  TimelineDate,
+  TimelineHeader,
+  TimelineIndicator,
+  TimelineItem,
+  TimelineSeparator,
+  TimelineTitle,
+} from "@/components/ui/timeline";
+import { ImageTextCard } from "@/components/ui/image-text-card";
+import {
+  BrandStorySection,
+  JourneySection,
+  InnovationSection,
+  TeamSection,
+  MissionSection,
+} from "@/features/about";
+import { ImageLeftTextRight } from "@/components/ui/image-text-section";
+
+// Unified timeline data structure combining both timeline and card information
+const timelineData = [
+  {
+    id: 1,
+    date: "Year 2003",
+    image: {
+      src: "/timeline/tl-1.png",
+      alt: "Company founding moment",
+    },
+    cardText:
+      "In 2003, the first YGF hotpot restaurant was opened in Harbin, China, and became an instant local hit.",
+  },
+  {
+    id: 2,
+    date: "Year 2009",
+    image: {
+      src: "/timeline/tl-2.png",
+      alt: "Product launch celebration",
+    },
+    cardText:
+      "In 2009, Mr. Guofu Yang has registered his name as a trademark, launched a nationwide franchise program, and built standardised soup base factories and logistics systems.",
+  },
+  {
+    id: 3,
+    date: "Year 2010",
+    image: {
+      src: "/timeline/tl-3.png",
+      alt: "Series A funding announcement",
+    },
+    cardText:
+      "By 2010, YGF had over 1,000 stores, expanding from its Northeastern roots to become a household name across China.",
+  },
+  {
+    id: 4,
+    date: "Year 2017",
+    image: {
+      src: "/timeline/tl-4.png",
+      alt: "International office opening",
+    },
+    cardText: "The first YGF international store opened in Canada.",
+  },
+  {
+    id: 5,
+    date: "Year 2025",
+    image: {
+      src: "/timeline/tl-5.png",
+      alt: "IPO preparation meeting",
+    },
+    cardText:
+      "By 2025, YGF operates nearly 7,000 stores in over 20 countries worldwide.",
+  },
+  {
+    id: 6,
+    date: "Year 2026",
+    image: {
+      src: "/timeline/tl-5.png",
+      alt: "IPO preparation meeting",
+    },
+    cardText:
+      "TBC",
+  },
+];
+
+export function TimelineSection() {
+  return (
+    <div className="container mx-auto py-8 pl-6 pr-6">
+      <h2 className="text-3xl font-bold mb-8 text-center text-white">
+        Our Brand Story
+      </h2>
+
+      {/* Cards above timeline - dynamically generated from timelineData */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 mb-4">
+        {timelineData.map((item, index) => (
+          <ImageTextCard
+            className="h-100"
+            key={item.id}
+            image={item.image}
+            text={item.cardText}
+            imageRatio={1}
+            textRatio={1}
+          />
+        ))}
+      </div>
+
+      {/* Simple Timeline - dynamically generated from timelineData */}
+      <Timeline
+        defaultValue={timelineData.length}
+        orientation="horizontal"
+        className="text-white"
+      >
+        {timelineData.map((item) => (
+          <TimelineItem key={item.id} step={item.id}>
+            <TimelineHeader>
+              <TimelineSeparator />
+              <TimelineDate>{item.date}</TimelineDate>
+
+              <TimelineIndicator />
+            </TimelineHeader>
+          </TimelineItem>
+        ))}
+      </Timeline>
+    </div>
+  );
+}
 
 export default function AboutPage() {
-    const t = useI18n()
-    const backgroundImage = [
-        {
-            src: "/about/title.png",
-            alt: "Background Image"
-        },
+  const t = useI18n();
+  const backgroundImage = [
+    {
+      src: "/Banner.png",
+      alt: "Background Image",
+    },
+  ];
 
-    ]
-
-    return (
-        <>
-            <Header />
-            <main className="min-h-screen bg-background">
-                {/* Hero Section */}
-                <PageBanner title={t.aboutPage.hero.title} backgroundImage={backgroundImage[0]} />
-
-                {/* Brand Story Section Title */}
-                <section className="py-12 bg-white">
-                    <div className="container mx-auto px-4 lg:px-8 xl:px-16 px-4 lg:px-8 xl:px-16 text-center">
-                        <h2 className="text-4xl font-bold text-black mb-4">Our Brand Story</h2>
-                        <p className="text-xl text-black max-w-2xl mx-auto">
-                            Discover the journey that shaped our company and the values that drive us forward
-                        </p>
-                    </div>
-                </section>
-
-                {/* Story Section 1 - Left Image, Right Text */}
-                <section className="py-20 bg-white">
-                    <div className="container mx-auto px-4 lg:px-8 xl:px-16">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                            <div className="order-2 lg:order-1">
-                                <img
-                                    src="/about/mainbuilding.png"
-                                    alt="Our Journey Begins"
-                                    className="rounded-lg shadow-lg w-full h-auto"
-                                />
-                            </div>
-                            <div className="order-1 lg:order-2">
-                                <h2 className="text-3xl font-bold text-foreground mb-6">{t.aboutPage.story.journey.title}</h2>
-                                <p className="text-lg text-muted-foreground mb-6 leading-relaxed whitespace-pre-line">
-                                    {t.aboutPage.story.journey.description1}
-                                </p>
-                                <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
-                                    {t.aboutPage.story.journey.description2}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Story Section 2 - Right Image, Left Text */}
-                <section className="py-20 bg-white">
-                    <div className="container mx-auto px-4 lg:px-8 xl:px-16">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                            <div>
-                                <h2 className="text-3xl font-bold text-foreground mb-6">{t.aboutPage.story.innovation.title}</h2>
-                                <p className="text-lg text-muted-foreground mb-6 leading-relaxed whitespace-pre-line">
-                                    {t.aboutPage.story.innovation.description1}
-                                </p>
-                                <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
-                                    {t.aboutPage.story.innovation.description2}
-                                </p>
-                            </div>
-                            <div>
-                                <img
-                                    src="/about/ygf_au.png"
-                                    alt="Innovation at Our Core"
-                                    className="rounded-lg shadow-lg w-full h-auto"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Team Section */}
-                <section className="py-20 white">
-                    <div className="container mx-auto px-4 lg:px-8 xl:px-16">
-                        <div className="text-center mb-16">
-                            <h2 className="text-4xl font-bold text-foreground mb-4">{t.aboutPage.team.title}</h2>
-                            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                                {t.aboutPage.team.subtitle}
-                            </p>
-                        </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {/* Team Member 1 */}
-                            <Card className="text-center hover:shadow-lg transition-shadow duration-300">
-                                <CardHeader className="pb-4">
-                                    <Avatar className="w-24 h-24 mx-auto mb-4">
-                                        <AvatarImage src="https://i.pravatar.cc/150?img=11" alt="Founder" />
-                                        <AvatarFallback className="text-lg">F</AvatarFallback>
-                                    </Avatar>
-                                    <div>
-                                        <h3 className="text-xl font-semibold text-foreground">Founder</h3>
-                                        <p className="text-muted-foreground">YGF Australia</p>
-                                    </div>
-                                </CardHeader>
-                                <CardContent>
-                                    <p className="text-sm text-muted-foreground leading-relaxed">
-                                        Visionary leader who created the world's first "drinkable soup malatang" and built YGF from a small Harbin food stall into a global brand with nearly 7,000 restaurants worldwide.
-                                    </p>
-                                </CardContent>
-                            </Card>
-
-                            {/* Team Member 2 */}
-                            <Card className="text-center hover:shadow-lg transition-shadow duration-300">
-                                <CardHeader className="pb-4">
-                                    <Avatar className="w-24 h-24 mx-auto mb-4">
-                                        <AvatarImage src="https://i.pravatar.cc/150?img=12" alt="Co-Founder" />
-                                        <AvatarFallback className="text-lg">CF</AvatarFallback>
-                                    </Avatar>
-                                    <div>
-                                        <h3 className="text-xl font-semibold text-foreground">Co-Founder</h3>
-                                        <p className="text-muted-foreground">YGF Australia</p>
-                                    </div>
-                                </CardHeader>
-                                <CardContent>
-                                    <p className="text-sm text-muted-foreground leading-relaxed">
-                                        Strategic partner bringing over 15 years of Australian F&B industry expertise, including key experience in establishing Spicy World Australia.
-                                    </p>
-                                </CardContent>
-                            </Card>
-
-                            {/* Team Member 3 */}
-                            <Card className="text-center hover:shadow-lg transition-shadow duration-300">
-                                <CardHeader className="pb-4">
-                                    <Avatar className="w-24 h-24 mx-auto mb-4">
-                                        <AvatarImage src="https://i.pravatar.cc/150?img=13" alt="Marketing Manager" />
-                                        <AvatarFallback className="text-lg">MM</AvatarFallback>
-                                    </Avatar>
-                                    <div>
-                                        <h3 className="text-xl font-semibold text-foreground">Marketing Manager</h3>
-                                        <p className="text-muted-foreground">YGF Australia</p>
-                                    </div>
-                                </CardHeader>
-                                <CardContent>
-                                    <p className="text-sm text-muted-foreground leading-relaxed">
-                                        Marketing expert driving brand awareness and customer engagement across Australia, building the YGF community and expanding our market presence.
-                                    </p>
-                                </CardContent>
-                            </Card>
-                        </div>
-                    </div>
-                </section>
-
-
-
-                {/* Vision/Mission Section */}
-                <section className="py-20">
-                    <div className="container mx-auto px-4 lg:px-8 xl:px-16 text-center">
-                        <h2 className="text-4xl font-bold text-foreground mb-8">{t.aboutPage.mission.title}</h2>
-                        <div className="max-w-4xl mx-auto">
-                            <p className="text-xl text-muted-foreground mb-6 leading-relaxed whitespace-pre-line">
-                                {t.aboutPage.mission.description1}
-                            </p>
-                            <p className="text-xl text-muted-foreground mb-6 leading-relaxed whitespace-pre-line">
-                                {t.aboutPage.mission.description2}
-                            </p>
-                            <p className="text-xl text-muted-foreground leading-relaxed whitespace-pre-line">
-                                {t.aboutPage.mission.description3}
-                            </p>
-                        </div>
-                    </div>
-                </section>
-            </main>
-
-            <Footer />
-        </>
-    )
+  return (
+    <>
+      <Header />
+      <main className="min-h-screen bg-black">
+        <PageBanner
+          title={t.aboutPage.hero.title}
+          backgroundImage={backgroundImage[0]}
+        />
+        <TimelineSection />
+        <div className="bg-white">
+          <TeamSection />
+        </div>
+        <ImageLeftTextRight
+          textBackgroundColor="bg-[#A1221F]"
+          titleColor="text-white"
+          descriptionColor="text-white"
+          title="Looking Ahead"
+          description={[
+            "• November 2025: Marion store opens (South Australia)",
+            "• Flagship on Gouger Street, Adelaide, plus Brisbane CBD launch",
+            "• Continued growth with two new SA stores",
+            "• Sydney flagship opening",
+            "• 30 YGF stores nationwide, establishing YGF as the leading Malatang brand in Australia",
+          ].join("\n")}
+          image={backgroundImage[0]}
+        />
+      </main>
+      <Footer />
+    </>
+  );
 }

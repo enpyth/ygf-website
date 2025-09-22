@@ -181,7 +181,7 @@ const en: Strings = {
   },
   careersPage: {
     hero: {
-      title: 'Beyond Franchising – Partner With Us',
+      title: 'Why Work With Us?',
       subtitle: 'We welcome collaborations across industries, including:\n•Event & festival catering\n•Sponsorships & cross-promotions\n•University & student association partnerships\n•Food delivery & e-commerce collaborations',
     },
     whyWorkWithUs: {
