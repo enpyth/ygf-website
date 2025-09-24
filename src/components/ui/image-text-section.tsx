@@ -99,11 +99,11 @@ export function TextLeftImageRight({
   className,
   textBackgroundColor = "bg-background",
   titleColor = "text-foreground",
-//   descriptionColor = "text-muted-foreground",
+  descriptionColor = "text-muted-foreground",
 }: Omit<ImageTextSectionProps, "variant">) {
   return (
     <section
-      className={cn("w-full flex overflow-hidden m-0 p-0 h-85", className)}
+      className={cn("w-full flex overflow-hidden m-0 p-0 h-135", className)}
     >
       {/* 文字部分 */}
       <div
@@ -114,7 +114,7 @@ export function TextLeftImageRight({
       >
         <div className="max-w-md text-center">
           <h2 className={cn("text-3xl font-bold mb-4", titleColor)}>{title}</h2>
-          <p className="text-lg text-left text-muted-foreground leading-relaxed mb-6">
+          <p className={cn("text-lg text-left text-muted-foreground leading-relaxed mb-6", descriptionColor)}>
             {description.split("\n").map((line, index) => (
               <React.Fragment key={index}>
                 {line}
@@ -221,7 +221,7 @@ export function TextLeftImageRightWithButton({
 }) {
   return (
     <section
-      className={cn("w-full flex overflow-hidden m-0 p-0 h-85", className)}
+      className={cn("w-full flex overflow-hidden m-0 p-0 h-135", className)}
     >
       {/* 文字部分 */}
       <div className="w-1/2 flex flex-col justify-center items-center p-8 bg-background">
