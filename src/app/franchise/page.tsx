@@ -86,12 +86,11 @@ export default function FranchisePage() {
                 <PageBanner title={t.franchisePage.hero.title} backgroundImage={backgroundImage[0]} />
                 <ColorSeparator
                     title='Partner with YGF Australia'
-                    description=''
                     backgroundColor="bg-[#82000C]"
                     titleColor="text-white text-left "
                     descriptionColor="text-white"
                 />
-                <div className='bg-[#82000C] pr-10'>
+                <div className='bg-[#82000C] p-10'>
                 <TextLeftImageRight
                     textBackgroundColor="bg-[#82000C]"
                     image={PartnerWith[0]}
@@ -103,10 +102,7 @@ export default function FranchisePage() {
                     
                 />
                 </div>
-                <ColorSeparator
-                    backgroundColor="bg-[#82000C]"
-                />
-
+                
                 <TitleImageSection
                     image={SupportImage[0]}
                     title=''
