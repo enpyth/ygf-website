@@ -76,16 +76,7 @@ const timelineData = [
     cardText:
       "By 2025, YGF operates nearly 7,000 stores in over 20 countries worldwide.",
   },
-  {
-    id: 6,
-    date: "Year 2026",
-    image: {
-      src: "/timeline/tl-5.png",
-      alt: "IPO preparation meeting",
-    },
-    cardText:
-      "TBC",
-  },
+  
 ];
 
 export function TimelineSection() {
@@ -96,7 +87,7 @@ export function TimelineSection() {
       </h2>
 
       {/* Cards above timeline - dynamically generated from timelineData */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 mb-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-4">
         {timelineData.map((item, index) => (
           <ImageTextCard
             className="h-100"
@@ -113,7 +104,7 @@ export function TimelineSection() {
       <Timeline
         defaultValue={timelineData.length}
         orientation="horizontal"
-        className="text-white"
+        className="text-white ml-25"
       >
         {timelineData.map((item) => (
           <TimelineItem key={item.id} step={item.id}>
@@ -138,6 +129,12 @@ export default function AboutPage() {
       alt: "Background Image",
     },
   ];
+  const LookingAheadImage = [
+    {
+      src: "/about/LookingAhead.png",
+      alt: "Looking Ahead Image",
+    },
+  ]
 
   return (
     <>
@@ -154,8 +151,9 @@ export default function AboutPage() {
         <ImageLeftTextRight
           textBackgroundColor="bg-[#A1221F]"
           titleColor="text-white"
-          descriptionColor="text-white"
+          descriptionColor="text-white whitespace-pre-line"
           title="Looking Ahead"
+          
           description={[
             "• November 2025: Marion store opens (South Australia)",
             "• Flagship on Gouger Street, Adelaide, plus Brisbane CBD launch",
@@ -163,7 +161,7 @@ export default function AboutPage() {
             "• Sydney flagship opening",
             "• 30 YGF stores nationwide, establishing YGF as the leading Malatang brand in Australia",
           ].join("\n")}
-          image={backgroundImage[0]}
+          image={LookingAheadImage[0]}
         />
       </main>
       <Footer />

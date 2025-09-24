@@ -17,10 +17,10 @@ export function TeamSection() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
                     {/* Team Member 1 */}
                     <Card className="text-center hover:shadow-lg transition-shadow duration-300">
-                        <CardHeader className="pb-4">
+                        <CardHeader className="pb-2">
                             <Avatar className="w-24 h-24 mx-auto mb-4">
                                 <AvatarImage src="https://i.pravatar.cc/150?img=11" alt="Founder" />
                                 <AvatarFallback className="text-lg">F</AvatarFallback>
@@ -39,13 +39,13 @@ export function TeamSection() {
 
                     {/* Team Member 2 */}
                     <Card className="text-center hover:shadow-lg transition-shadow duration-300">
-                        <CardHeader className="pb-4">
+                        <CardHeader className="pb-2">
                             <Avatar className="w-24 h-24 mx-auto mb-4">
                                 <AvatarImage src="https://i.pravatar.cc/150?img=12" alt="Co-Founder" />
                                 <AvatarFallback className="text-lg">CF</AvatarFallback>
                             </Avatar>
                             <div>
-                                <h3 className="text-xl font-semibold text-foreground">Co-Founder</h3>
+                                <h3 className="text-xl font-semibold text-foreground">Visionary Leaders</h3>
                                 <p className="text-muted-foreground">YGF Australia</p>
                             </div>
                         </CardHeader>
@@ -57,7 +57,7 @@ export function TeamSection() {
                     </Card>
 
                     {/* Team Member 3 */}
-                    <Card className="text-center hover:shadow-lg transition-shadow duration-300">
+                    {/* <Card className="text-center hover:shadow-lg transition-shadow duration-300">
                         <CardHeader className="pb-4">
                             <Avatar className="w-24 h-24 mx-auto mb-4">
                                 <AvatarImage src="https://i.pravatar.cc/150?img=13" alt="Marketing Manager" />
@@ -73,7 +73,7 @@ export function TeamSection() {
                                 Marketing expert driving brand awareness and customer engagement across Australia, building the YGF community and expanding our market presence.
                             </p>
                         </CardContent>
-                    </Card>
+                    </Card> */}
                 </div>
             </div>
         </section>
