@@ -44,7 +44,7 @@ export function ColorSeparator({
     descriptionSize = "text-base sm:text-lg",
     textAlignment = "center",
     maxWidth = "max-w-4xl",
-    padding = "py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8",
+    padding = "py-5 sm:py-12 lg:py-16 px-4 sm:px-5 lg:px-8",
     minHeight = "min-h-[120px] sm:min-h-[150px]",
     showBorder = false,
     borderColor = "border-gray-200",

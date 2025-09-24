@@ -49,7 +49,7 @@ export function FranchiseeStoriesSection({
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                     {t.franchisePage.franchiseeStories.stories.map((story: { name: string, location: string, story: string }, index: number) => (
-                        <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300 bg-white/1 border-none">
+                        <Card key={index} className="text-center duration-300 bg-white/1 border-none">
                             <CardHeader>
                                 <Avatar className="w-50 h-50 mx-auto mb-1">
                                     <AvatarImage src="https://i.pravatar.cc/150?img=1" alt="Founder" />
