@@ -59,7 +59,7 @@ export default function CareersPage() {
     ]
     const WhyWorkWithUsImage = [
         {
-            src: "/franchise/why.png",
+            src: "/career/why.png",
             alt: "Background Image"
         },
     ]
@@ -68,13 +68,21 @@ export default function CareersPage() {
         <>
             <Header />
             <main className="min-h-screen bg-black">
-                <PageBanner title={t.careersPage.hero.title} backgroundImage={backgroundImage[0]} />
+                <PageBanner title={t.careersPage.hero.title} backgroundImage={backgroundImage[0]}/>
                 <div 
                 className="w-full h-auto bg-cover bg-center items-center justify-center text-white"
   style={{
-    backgroundImage: "linear-gradient(rgba(209, 79, 79, 0.66), rgba(202, 65, 65, 0.5)), url('/career/why2.png')",
+    backgroundImage: "linear-gradient(rgba(140, 40, 40, 0.66), rgba(152, 43, 43, 0.5)), url('/career/why2.png')",
   }}>
-    <PageBanner title={''} subtitle={t.careersPage.whyWorkWithUs.subtitle} backgroundImage={WhyWorkWithUsImage[0]}/>
+                    <PageBanner
+                        className="h-25 flex items-center justify-center"
+                        contentClassName="text-left text-4xl text-bold"
+                        title={t.careersPage.whyWorkWithUs.subtitle}
+                        
+                        backgroundImage={WhyWorkWithUsImage[0]}
+                        overlayClassName="bg-red-600/60"
+                    />
+
                 <section className="py-40">
                     <div className="container mx-auto px-4 lg:px-8 xl:px-16">
                         {/* <div className="text-center mb-16">
