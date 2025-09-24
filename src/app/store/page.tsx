@@ -47,6 +47,7 @@ export default function StorePage() {
             alt: "Background Image"
         },
     ]
+
     return (
         <>
             <Header />

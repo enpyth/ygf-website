@@ -41,7 +41,7 @@ export function ImageTextSection({
     >
       {/* 图片部分 */}
       <div className="w-1/2 relative overflow-hidden">
-        <Image src={image.src} alt={image.alt} fill className="object-cover" />
+        <Image src={image.src} alt={image.alt} fill className="object-cover ml-100" />
       </div>
 
       {/* 文字部分 */}
@@ -113,7 +113,7 @@ export function TextLeftImageRight({
         )}
       >
         <div className="max-w-md text-center">
-          <h2 className={cn("text-3xl font-bold mb-4", titleColor)}>{title}</h2>
+          <h2 className={cn("text-3xl font-bold mb-1", titleColor)}>{title}</h2>
           <p className={cn("text-lg text-left text-muted-foreground leading-relaxed mb-6", descriptionColor)}>
             {description.split("\n").map((line, index) => (
               <React.Fragment key={index}>
