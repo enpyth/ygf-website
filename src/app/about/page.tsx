@@ -76,7 +76,7 @@ const timelineData = [
     cardText:
       "By 2025, YGF operates nearly 7,000 stores in over 20 countries worldwide.",
   },
-  
+
 ];
 
 export function TimelineSection() {
@@ -153,7 +153,7 @@ export default function AboutPage() {
           titleColor="text-white"
           descriptionColor="text-white whitespace-pre-line"
           title="Looking Ahead"
-          
+
           description={[
             "• November 2025: Marion store opens (South Australia)",
             "• Flagship on Gouger Street, Adelaide, plus Brisbane CBD launch",

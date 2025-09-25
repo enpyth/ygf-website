@@ -106,7 +106,7 @@ export default function ProductsPage() {
                 /> */}
                 <TextLeftImageRight
                     title="Our Specialities-Elevate Chinese Classics"
-                    description="Expertly curated dishes infused with the hearty flavors of China, created with an emphasis on wholesome, nourishing ingredients for a well-rounded dining experience. "
+                    description="Expertly curated dishes infused with the hearty flavours of China, created with an emphasis on wholesome, nourishing ingredients for a well-rounded dining experience. "
                     image={ProductsSection1[0]}
                     textBackgroundColor="bg-[#9B3A31]"
                     titleColor="text-white"
@@ -114,15 +114,15 @@ export default function ProductsPage() {
                 />
                 <ImageLeftTextRight
                     title="Health-Focused Ingredients"
-                    description="Discover a world of vibrant and flavorful dining where your health and taste buds are equally prioritized. We're committed to using only the freshest, healthiest ingredients in our dishes, featuring a variety of proteins such as shrimp, chicken, and beef, alongside an array of fresh vegetables. Our nutritious offerings ensure a guilt-free and enjoyable dining experience."
+                    description="Discover a world of vibrant and flavourful dining where your health and taste buds are equally prioritized. We're committed to using only the freshest, healthiest ingredients in our dishes, featuring a variety of proteins such as shrimp, chicken, and beef, alongside an array of fresh vegetables. Our nutritious offerings ensure a guilt-free and enjoyable dining experience."
                     image={ProductsSection2[0]}
                     textBackgroundColor="bg-[#9B3A31]"
                     titleColor="text-white"
                     descriptionColor="text-white"
                 />
                 <TextLeftImageRight
-                    title="Our Specialities-Elevate Chinese Classics"
-                    description="Expertly curated dishes infused with the hearty flavors of China, created with an emphasis on wholesome, nourishing ingredients for a well-rounded dining experience. "
+                    title="Super Fast Preparation and Enjoyment"
+                    description="Savor the wonders of hotpot in no time with our expedited cooking process. Our talented chefs are well-versed in preparing this fresh and flavourful dish quickly, ensuring that your customised order is served promptly and at the peak of deliciousness. Relish in the warmth and richness of hotpot without the wait."
                     image={ProductsSection3[0]}
                 />
                 <ImageLeftTextRight
