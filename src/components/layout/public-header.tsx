@@ -77,9 +77,7 @@ export default function PublicHeader() {
                                     <DropdownMenuItem asChild>
                                         <Link href="/careers" className="w-full">{t.header.careers}</Link>
                                     </DropdownMenuItem>
-                                    <DropdownMenuItem asChild>
-                                        <Link href="/contact" className="w-full">{t.header.contact}</Link>
-                                    </DropdownMenuItem>
+                                    
                                     <DropdownMenuItem asChild>
                                         <Link href="/membership" className="w-full">{t.header.membership}</Link>
                                     </DropdownMenuItem>
@@ -142,9 +140,9 @@ export default function PublicHeader() {
                         </Button> */}
 
                         {!user && (
-                            <Button variant="ghost" size="sm" asChild className="text-white hover:bg-white/10 hover:text-white data-[state=open]:bg-white/10">
+                            <Button variant="ghost" size="lg" asChild className="bg-primary text-white hover:bg-primary/90 hover:text-white data-[state=open]:bg-white/10">
                                 <Link href="/auth/sign-in">
-                                    <LogIn className="w-4 h-4 mr-2" />
+                                    {/* <LogIn className="w-4 h-4 mr-1" /> */}
                                     {t.header.login}
                                 </Link>
                             </Button>
@@ -179,9 +177,7 @@ export default function PublicHeader() {
                                 <DropdownMenuItem asChild>
                                     <Link href="/careers" className="w-full">{t.header.careers}</Link>
                                 </DropdownMenuItem>
-                                <DropdownMenuItem asChild>
-                                    <Link href="/contact" className="w-full">{t.header.contact}</Link>
-                                </DropdownMenuItem>
+                                
                                 <DropdownMenuItem asChild>
                                     <Link href="/membership" className="w-full">{t.header.membership}</Link>
                                 </DropdownMenuItem>

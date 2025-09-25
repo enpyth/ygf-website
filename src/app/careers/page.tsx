@@ -80,7 +80,7 @@ export default function CareersPage() {
                         title={t.careersPage.whyWorkWithUs.subtitle}
                         
                         backgroundImage={WhyWorkWithUsImage[0]}
-                        overlayClassName="bg-red-600/60"
+                        overlayClassName="bg-red-800/60"
                     />
 
                 <section className="py-40">
@@ -109,7 +109,7 @@ export default function CareersPage() {
                             </Card>
 
                             <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300">
-                                <CardHeader className="pb-4">
+                                <CardHeader className="pb-0">
                                     <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4 mx-auto">
                                         <Users className="w-6 h-6 text-white" />
                                     </div>
@@ -123,7 +123,7 @@ export default function CareersPage() {
                             </Card>
 
                             <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300">
-                                <CardHeader className="pb-4">
+                                <CardHeader className="pb-0">
                                     <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4 mx-auto">
                                         <TrendingUp className="w-6 h-6 text-white" />
                                     </div>
@@ -137,7 +137,7 @@ export default function CareersPage() {
                             </Card>
 
                             <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300">
-                                <CardHeader className="pb-4">
+                                <CardHeader className="pb-0">
                                     <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4 mx-auto">
                                         <Award className="w-6 h-6 text-white" />
                                     </div>

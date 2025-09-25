@@ -71,11 +71,11 @@ export default function HomePage() {
           <TextImage13
             image={TestimonialsImage[0]}
             title={'What Our\nClients Say'}
-            subtitle=""
-            description1={'Xiangzhe\nDelicious food, super clean place, and really fast service. Loved it!'}
+            subtitle="Hear from our satisfied customers about their experience with our services."
+            description1={'Delicious food, super clean place, and really fast service. Loved it!\n -Xiangzhe'}
             
-            description2={'Hans\nThe best Chinese hotpot in Adelaide unless the boss decides to open a second store in city. Authentic flavours that make me coming back at least three times a week. Always five-star experience! Btw, the staff are super kind and adorable.'}
-            description3={'Margaret\nA wonderful place for hot pot. Love the soup bases and the variety of fresh ingredients to use.\nMost definitely coming back.'}
+            description2={'The best Chinese hotpot in Adelaide unless the boss decides to open a second store in city. Authentic flavours that make me coming back at least three times a week. Always five-star experience! Btw, the staff are super kind and adorable.\n -Hans'}
+            description3={'A wonderful place for hot pot. Love the soup bases and the variety of fresh ingredients to use.\nMost definitely coming back.\n -Margaret'}
           />
         </div>
       </main>

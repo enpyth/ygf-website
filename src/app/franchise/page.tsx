@@ -84,32 +84,31 @@ export default function FranchisePage() {
             <Header />
             <main className="min-h-screen bg-black">
                 <PageBanner title={t.franchisePage.hero.title} backgroundImage={backgroundImage[0]} />
-                <ColorSeparator
+                {/* <ColorSeparator
                     title='Partner with YGF Australia'
                     backgroundColor="bg-[#82000C]"
                     titleColor="text-white text-left "
                     descriptionColor="text-white"
-                />
+                /> */}
                 <div className='bg-[#82000C] p-10'>
 
                 <TextLeftImageRight
                     textBackgroundColor="bg-[#82000C]"
                     image={PartnerWith[0]}
-                    title=''
+                    title='Partner with YGF Australia'
                     description='Become a part of the rapidly growing dining market with a YGF Australia franchise. Our authentic hotpot recipes, modern restaurant design, and innovative service model deliver an unparalleled experience. As a franchisee, you’ll gain access to proven systems, comprehensive training, and expert marketing support.
 '
-                    titleColor="text-white"
+                    titleColor="text-white text-left text-4xl pb-10"
                     descriptionColor="text-white text-2xl"
                     
                 />
                 </div>
                 
-                <TitleImageSection
+                <TitleImageSection className='p-0'
                     image={SupportImage[0]}
                     title=''
                     description=''
-                    backgroundColor="bg-white"
-                    titleColor="text-black text-center"
+                    imageHeight='w-full h-auto'
                 />
                 <FAQSection/>
 
@@ -119,7 +118,7 @@ export default function FranchisePage() {
                     overlayColor="rgb(191, 84, 75)"
                     overlayOpacity={0.7}
                 />
-                <TitleImageSection
+                <TitleImageSection className='p-0'
                     image={ProcessImage[0]}
                     title=''
                     description=''

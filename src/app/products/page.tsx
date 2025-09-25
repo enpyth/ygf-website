@@ -109,7 +109,7 @@ export default function ProductsPage() {
                     description="Expertly curated dishes infused with the hearty flavors of China, created with an emphasis on wholesome, nourishing ingredients for a well-rounded dining experience. "
                     image={ProductsSection1[0]}
                     textBackgroundColor="bg-[#9B3A31]"
-                    titleColor="text-white"
+                    titleColor="text-white text-left"
                     descriptionColor="text-white"
                 />
                 <ImageLeftTextRight
@@ -117,17 +117,19 @@ export default function ProductsPage() {
                     description="Discover a world of vibrant and flavorful dining where your health and taste buds are equally prioritized. We're committed to using only the freshest, healthiest ingredients in our dishes, featuring a variety of proteins such as shrimp, chicken, and beef, alongside an array of fresh vegetables. Our nutritious offerings ensure a guilt-free and enjoyable dining experience."
                     image={ProductsSection2[0]}
                     textBackgroundColor="bg-[#9B3A31]"
-                    titleColor="text-white"
+                    titleColor="text-white text-left"
                     descriptionColor="text-white"
                 />
                 <TextLeftImageRight
-                    title="Our Specialities-Elevate Chinese Classics"
-                    description="Expertly curated dishes infused with the hearty flavors of China, created with an emphasis on wholesome, nourishing ingredients for a well-rounded dining experience. "
+                    title="Super Fast Preparation and Enjoyment"
+                    description="Savor the wonders of hotpot in no time with our expedited cooking process. Our talented chefs are well-versed in preparing this fresh and flavourful dish quickly, ensuring that your customised order is served promptly and at the peak of deliciousness. Relish in the warmth and richness of hotpot without the wait."
+                    titleColor="text-left"
                     image={ProductsSection3[0]}
                 />
                 <ImageLeftTextRight
                     title="Fully Customised Ordering"
                     description="Experience the ultimate personalised dining adventure with our fully customisable ordering system. Choose from an endless combination of delectable ingredients and let our experienced chefs craft the perfect hotpot creation tailored to your preferences, complete with a unique soup base designed to elevate your taste experience."
+                    titleColor="text-left"
                     image={ProductsSection4[0]}
                 />
                 {/* 招牌汤底 */}
@@ -140,7 +142,7 @@ export default function ProductsPage() {
                     minHeight="max-h-[200px]"
                 />
                 <TitleImageCarousel
-                    className="bg-black"
+                    className="bg-black pl-10 pr-10"
                     items={[
                         {
                             title: "Classic Herbal Beef Bone Broth",

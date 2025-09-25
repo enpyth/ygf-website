@@ -263,12 +263,12 @@ const en: Strings = {
   },
   franchisePage: {
     hero: {
-      title: 'Franchise Opportunities',
+      title: 'Partner With YGF Australia',
       subtitle: 'As a YGF Australia Franchise Partner, you are more than an investor \n— you are joining the world’s largest and most recognized Malatang brand, with over 6,000 stores worldwide and rapid growth in Australia.',
 
     },
     jobDescription: {
-      title: 'Partner with YGF Australia',
+      title: 'About Franchising',
       subtitle: 'As a YGF Australia Franchise Partner, you are more than an investor \n — you are joining the world’s largest and most recognized Malatang brand, with over 6,000 stores worldwide and rapid growth in Australia.',
       description1: '• Proven Business Model – a globally successful, highly replicable system tailored for the Australian market.',
       description2: '• Comprehensive Support – from site selection, store design, and staff training to supply chain and marketing campaigns.',
@@ -487,14 +487,14 @@ const en: Strings = {
       title: 'Franchisee Stories: Growth, Success & Freedom',
       stories: [
         {
-          name: 'Daniel Mesiti & Anthony Stahl',
-          location: 'Eastgardens, Chatswood Monsoon & Westfield, Top Ryde, Bankstown',
-          story: 'After struggling in our own business for over 5 years we looked to Franchising to improve our business and ourselves. We didn\'t understand at the time just how good a fit Boost would be. Boost continue to push themselves to improve and us as Partners. After 12 years we are still loving life and Boost! Being part of a healthy brand that aims to make its customers feel just a little bit better has changed our lives.'
+          name: 'LuLu',
+          location: '',
+          story: '"After struggling in our own business for over 5 years we looked to Franchising to improve our business and ourselves. We didn\'t understand at the time just how good a fit Boost would be. Boost continue to push themselves to improve and us as Partners. After 12 years we are still loving life and Boost! Being part of a healthy brand that aims to make its customers feel just a little bit better has changed our lives."'
         },
         {
-          name: 'Daniel Chams-Eddine & Diana Dolgov',
-          location: 'Helensvale',
-          story: 'We feel truly honoured and grateful to be part of the beautiful Boost Family from the very beginning of our journey. We take pride in being part of an Australian Icon. We love the brand, it\'s raw energy, vibe, unique buzz & promoting a fun, loving and healthy lifestyle. Over the past few years we have enjoyed being part of a family that embraces its passion for life and worked closely with us to achieving our ongoing success and accomplishments.'
+          name: 'Rick',
+          location: '',
+          story: '"Having lived in Australia for over 10 years, I’ve managed different businesses including supermarkets and restaurants. After struggling in my own ventures for more than 5 years, I decided franchising was the right path to improve both my business and myself. That’s when I discovered Yang Guo Fu Hotpot. The team provided full support — from store design and equipment to menu training and marketing — saving me countless detours. Being part of a mature and trusted hotpot brand makes running my business so much easier and gives me peace of mind."'
         }
       ]
     },
@@ -552,7 +552,7 @@ const en: Strings = {
   },
   storePage: {
     hero: {
-      title: 'Store',
+      title: 'Our Stores',
       subtitle: 'We have multiple stores, welcome to visit.',
     },
   },

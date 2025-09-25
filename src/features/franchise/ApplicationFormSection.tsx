@@ -27,14 +27,14 @@ export function ApplicationFormSection({
         <section id="franchise-form" className="py-20">
             <div className="container mx-auto px-4 lg:px-8 xl:px-16">
                 <div className="max-w-4xl mx-auto">
-                    <div className="text-center mb-12">
+                    {/* <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                             {t.franchisePage.application.title}
                         </h2>
                         <p className="text-xl text-muted-foreground">
                             {t.franchisePage.application.subtitle}
                         </p>
-                    </div>
+                    </div> */}
 
                     <Card className="p-8 bg-white dark:bg-black">
                         <CardHeader className="pb-6">
