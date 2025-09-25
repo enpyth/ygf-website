@@ -33,6 +33,7 @@ interface TitleImageCarouselProps {
     showArrows?: boolean
     showIndicators?: boolean
     className?: string
+    height?: string | number
 }
 
 export default function TitleImageCarousel({
@@ -41,7 +42,8 @@ export default function TitleImageCarousel({
     interval = 6000,
     showArrows = true,
     showIndicators = true,
-    className
+    className,
+    height = '850px'
 }: TitleImageCarouselProps) {
     const [currentIndex, setCurrentIndex] = useState(0)
     const timerRef = useRef<NodeJS.Timeout | null>(null)
@@ -70,13 +72,13 @@ export default function TitleImageCarousel({
     return (
         <div className={cn('relative w-full', className)}>
             {/* Slides */}
-            <div className="relative w-full overflow-hidden">
+            <div className="relative w-full overflow-hidden" style={{ height }}>
                 {items.map((item, idx) => (
                     <div
                         key={idx}
                         className={cn(
-                            'transition-opacity duration-500 ease-in-out',
-                            idx === currentIndex ? 'opacity-100 block' : 'opacity-0 hidden'
+                            'absolute inset-0 transition-opacity duration-500 ease-in-out',
+                            idx === currentIndex ? 'opacity-100' : 'opacity-0'
                         )}
                     >
                         <TitleImageSection

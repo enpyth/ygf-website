@@ -88,7 +88,7 @@ export function TimelineSection() {
 
       {/* Cards above timeline - dynamically generated from timelineData */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-4">
+      
         {timelineData.map((item, index) => (
           <ImageTextCard
             className="h-100"
@@ -119,7 +119,6 @@ export function TimelineSection() {
         ))}
       </Timeline>
       </div>
-    </div>
   );
 }
 

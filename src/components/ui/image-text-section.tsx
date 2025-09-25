@@ -41,7 +41,7 @@ export function ImageTextSection({
     >
       {/* 图片部分 */}
       <div className="w-1/2 relative overflow-hidden">
-        <Image src={image.src} alt={image.alt} fill className="object-cover ml-100" />
+        <Image src={image.src} alt={image.alt} fill className="object-cover" />
       </div>
 
       {/* 文字部分 */}
@@ -152,7 +152,7 @@ export function ImageLeftTextRightWithButton({
 }) {
   return (
     <section
-      className={cn("w-full flex overflow-hidden m-0 p-0 h-85", className)}
+      className={cn("w-full flex overflow-hidden m-0 p-0 h-135", className)}
     >
       {/* 图片部分 */}
       <div className="w-1/2 relative overflow-hidden">
