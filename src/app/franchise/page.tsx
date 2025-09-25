@@ -6,7 +6,7 @@ import PageBanner from '@/components/layout/PageBanner'
 import { Separator } from '@/components/ui/separator'
 import { useI18n } from '@/lib/contexts/LanguageContent'
 import { useState } from 'react'
-import { ImageTextSection } from '@/components/ui/image-text-section'
+import { ImageTextSection, ImageWithNoText } from '@/components/ui/image-text-section'
 import {
     JobDescriptionSection,
     FranchiseSupportSection,
@@ -18,6 +18,7 @@ import {
 import { TextLeftImageRight } from '@/components/ui/image-text-section'
 import { ColorSeparator } from '@/components/ui/color-separator'
 import { TitleImageSection } from '@/components/ui/title-image-section'
+import HomePageBanner from '@/features/home/Banner-shadcn'
 
 
 export default function FranchisePage() {
@@ -96,20 +97,20 @@ export default function FranchisePage() {
                     textBackgroundColor="bg-[#82000C]"
                     image={PartnerWith[0]}
                     title='Partner with YGF Australia'
-                    description='Become a part of the rapidly growing dining market with a YGF Australia franchise. Our authentic hotpot recipes, modern restaurant design, and innovative service model deliver an unparalleled experience. As a franchisee, you’ll gain access to proven systems, comprehensive training, and expert marketing support.
-'
+                    description='Become a part of the rapidly growing dining market with a YGF Australia franchise. Our authentic hotpot recipes, modern restaurant design, and innovative service model deliver an unparalleled experience. As a franchisee, you’ll gain access to proven systems, comprehensive training, and expert marketing support.'
+                    
                     titleColor="text-white text-left text-4xl pb-10"
                     descriptionColor="text-white text-2xl"
                     
                 />
                 </div>
                 
-                <TitleImageSection className='p-0'
+                <ImageWithNoText
                     image={SupportImage[0]}
                     title=''
                     description=''
-                    imageHeight='w-full h-auto'
-                />
+                    variant="image-with-no-text"
+                    />
                 <FAQSection/>
 
                 <Separator className="bg-black/10" />
