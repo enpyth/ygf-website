@@ -85,23 +85,25 @@ export default function FranchisePage() {
             <main className="min-h-screen bg-black">
                 <PageBanner title={t.franchisePage.hero.title} backgroundImage={backgroundImage[0]} />
                 <ColorSeparator
-                    title='Partner With YGF Australia'
+                    title='Partner with YGF Australia'
                     backgroundColor="bg-[#82000C]"
                     titleColor="text-white text-left "
                     descriptionColor="text-white"
                 />
                 <div className='bg-[#82000C] p-10'>
-                    <TextLeftImageRight
-                        textBackgroundColor="bg-[#82000C]"
-                        image={PartnerWith[0]}
-                        title=''
-                        description='Become a part of the rapidly growing dining market with a YGF Australia franchise. Our authentic hotpot recipes, modern restaurant design, and innovative service model deliver an unparalleled experience. As a franchisee, you’ll gain access to proven systems, comprehensive training, and expert marketing support.'
-                        titleColor="text-white"
-                        descriptionColor="text-white text-2xl"
 
-                    />
+                <TextLeftImageRight
+                    textBackgroundColor="bg-[#82000C]"
+                    image={PartnerWith[0]}
+                    title=''
+                    description='Become a part of the rapidly growing dining market with a YGF Australia franchise. Our authentic hotpot recipes, modern restaurant design, and innovative service model deliver an unparalleled experience. As a franchisee, you’ll gain access to proven systems, comprehensive training, and expert marketing support.
+'
+                    titleColor="text-white"
+                    descriptionColor="text-white text-2xl"
+                    
+                />
                 </div>
-
+                
                 <TitleImageSection
                     image={SupportImage[0]}
                     title=''
@@ -109,7 +111,8 @@ export default function FranchisePage() {
                     backgroundColor="bg-white"
                     titleColor="text-black text-center"
                 />
-                <FAQSection />
+                <FAQSection/>
+
                 <Separator className="bg-black/10" />
                 <FranchiseeStoriesSection
                     backgroundImage={{ src: '/franchise/story.png', alt: 'Franchise background' }}
@@ -124,12 +127,12 @@ export default function FranchisePage() {
                     titleColor="text-black text-center"
                 />
                 <div className='bg-white'>
-                    <ApplicationFormSection
-                        onSubmit={handleSubmit}
-                        isSubmitting={isSubmitting}
-                        submitStatus={submitStatus}
-                        submitMessage={submitMessage}
-                    />
+                <ApplicationFormSection
+                    onSubmit={handleSubmit}
+                    isSubmitting={isSubmitting}
+                    submitStatus={submitStatus}
+                    submitMessage={submitMessage}
+                />
                 </div>
             </main>
             <Footer />

@@ -48,15 +48,7 @@ export function FranchiseeStoriesSection({
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                    {[{
-                        name: 'Lulu',
-                        location: '',
-                        story: '“As a professional chef and former restaurant owner, I’ve always been deeply connected to the food and beverage industry. When I saw YGF Hotpot entering Australia, I immediately recognised the huge potential of this sector. Joining such a well-established and trusted brand gave me the confidence to embark on a new chapter of entrepreneurship. I didn’t hesitate — I reached out right away and became the very first YGF Hotpot franchisee in Brisbane. It’s been an exciting journey and a rewarding opportunity to grow with a brand I truly believe in.”'
-                    }, {
-                        name: 'Rick',
-                        location: '',
-                        story: '“Having lived in Australia for over 10 years, I’ve managed different businesses including supermarkets and restaurants. After struggling in my own ventures for more than 5 years, I decided franchising was the right path to improve both my business and myself. That’s when I discovered Yang Guo Fu Hotpot. The team provided full support — from store design and equipment to menu training and marketing — saving me countless detours. Being part of a mature and trusted hotpot brand makes running my business so much easier and gives me peace of mind.”'
-                    }].map((story, index) => (
+                    {t.franchisePage.franchiseeStories.stories.map((story: { name: string, location: string, story: string }, index: number) => (
                         <Card key={index} className="text-center duration-300 bg-white/1 border-none">
                             <CardHeader>
                                 <Avatar className="w-50 h-50 mx-auto mb-1">

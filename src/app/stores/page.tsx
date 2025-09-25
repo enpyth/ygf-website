@@ -51,7 +51,7 @@ export default function StorePage() {
     return (
         <>
             <Header />
-            <main className="min-h-screen bg-background">
+            <main className="min-h-screen bg-black">
                 <PageBanner title={t.storePage.hero.title} backgroundImage={backgroundImage[0]} />
 
                 <div className="container mx-auto px-16 lg:px-16 xl:px-16 py-10">
