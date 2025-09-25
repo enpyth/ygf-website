@@ -11,7 +11,7 @@ import {
 export default function Membership() {
     const backgroundImage = [
         {
-            src: "/about/title.png",
+            src: "/Banner.png",
             alt: "Membership Background Image"
         }
     ];
@@ -20,7 +20,7 @@ export default function Membership() {
         <>
             <Header />
             <main className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50">
-                <PageBanner
+                <PageBanner className="bg-black"
                     title="Membership Program"
                     backgroundImage={backgroundImage[0]}
                 />

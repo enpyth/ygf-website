@@ -20,38 +20,38 @@ export function TeamSection() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* Team Member 1 */}
                     <Card className="text-center hover:shadow-lg transition-shadow duration-300">
-                        <CardHeader className="pb-4">
+                        <CardHeader className="pb-2">
                             <Avatar className="w-24 h-24 mx-auto mb-4">
                                 <AvatarImage src="https://i.pravatar.cc/150?img=11" alt="Founder" />
                                 <AvatarFallback className="text-lg">F</AvatarFallback>
                             </Avatar>
                             <div>
-                                <h3 className="text-xl font-semibold text-foreground">Founder</h3>
+                                <h3 className="text-xl font-semibold text-foreground">Founders & Visionary Leaders</h3>
                                 <p className="text-muted-foreground">YGF Australia</p>
                             </div>
                         </CardHeader>
                         <CardContent>
                             <p className="text-sm text-muted-foreground leading-relaxed">
-                                Visionary leader who created the world's first "drinkable soup malatang" and built YGF from a small Harbin food stall into a global brand with nearly 7,000 restaurants worldwide.
+                                The YGF Australia leadership team brings over 15 years of experience in the Australian food and beverage industry, with a strong track record including Spicy World Australia. Successfully launched Sydney and Melbourne stores with pioneering concepts such as robot-assisted service, creative butter bear hotpot bases, and premium dining experiences.
                             </p>
                         </CardContent>
                     </Card>
 
                     {/* Team Member 2 */}
                     <Card className="text-center hover:shadow-lg transition-shadow duration-300">
-                        <CardHeader className="pb-4">
+                        <CardHeader className="pb-2">
                             <Avatar className="w-24 h-24 mx-auto mb-4">
                                 <AvatarImage src="https://i.pravatar.cc/150?img=12" alt="Co-Founder" />
                                 <AvatarFallback className="text-lg">CF</AvatarFallback>
                             </Avatar>
                             <div>
-                                <h3 className="text-xl font-semibold text-foreground">Co-Founder</h3>
+                                <h3 className="text-xl font-semibold text-foreground">Operation Managers(Front House/Kitchen)</h3>
                                 <p className="text-muted-foreground">YGF Australia</p>
                             </div>
                         </CardHeader>
                         <CardContent>
                             <p className="text-sm text-muted-foreground leading-relaxed">
-                                Strategic partner bringing over 15 years of Australian F&B industry expertise, including key experience in establishing Spicy World Australia.
+                                Our Operation Managers have more than a decade of hands-on experience in the hospitality sector, with a deep focus on the modern hotpot industry. Their professional background in restaurant and hotel management provides extensive expertise in optimizing dining experiences, kitchen workflow, and staff training, ensuring consistent quality and efficiency across all outlets.
                             </p>
                         </CardContent>
                     </Card>
@@ -70,7 +70,7 @@ export function TeamSection() {
                         </CardHeader>
                         <CardContent>
                             <p className="text-sm text-muted-foreground leading-relaxed">
-                                Marketing expert driving brand awareness and customer engagement across Australia, building the YGF community and expanding our market presence.
+                                Our Marketing Lead has previously worked with international companies such as TikTok and Nestlé, bringing rich branding knowledge, strong social media resources, and proven experience in customer engagement. This expertise enables YGF Australia to build a powerful digital presence and connect with both local and international audiences.
                             </p>
                         </CardContent>
                     </Card>

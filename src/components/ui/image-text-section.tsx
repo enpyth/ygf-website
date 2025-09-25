@@ -113,8 +113,8 @@ export function TextLeftImageRight({
         )}
       >
         <div className="max-w-md text-center">
-          <h2 className={cn("text-3xl font-bold mb-4", titleColor)}>{title}</h2>
-          <p className="text-lg text-left text-muted-foreground leading-relaxed mb-6">
+          <h2 className={cn("text-3xl font-bold mb-1", titleColor)}>{title}</h2>
+          <p className={cn("text-lg text-left text-muted-foreground leading-relaxed mb-6", descriptionColor)}>
             {description.split("\n").map((line, index) => (
               <React.Fragment key={index}>
                 {line}

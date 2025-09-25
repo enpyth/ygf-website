@@ -53,13 +53,13 @@ export default function CareersPage() {
 
     const backgroundImage = [
         {
-            src: "/about/title.png",
+            src: "/Banner.png",
             alt: "Background Image"
         },
     ]
     const WhyWorkWithUsImage = [
         {
-            src: "/franchise/training.png",
+            src: "/career/why.png",
             alt: "Background Image"
         },
     ]
@@ -67,19 +67,32 @@ export default function CareersPage() {
     return (
         <>
             <Header />
-            <main className="min-h-screen bg-background">
-                <PageBanner title={t.careersPage.hero.title} backgroundImage={backgroundImage[0]} />
-                <PageBanner title={''} subtitle={t.careersPage.whyWorkWithUs.subtitle} backgroundImage={WhyWorkWithUsImage[0]} />
-                <section className="py-20">
+            <main className="min-h-screen bg-black">
+                <PageBanner title={t.careersPage.hero.title} backgroundImage={backgroundImage[0]}/>
+                <div 
+                className="w-full h-auto bg-cover bg-center items-center justify-center text-white"
+  style={{
+    backgroundImage: "linear-gradient(rgba(140, 40, 40, 0.66), rgba(152, 43, 43, 0.5)), url('/career/why2.png')",
+  }}>
+                    <PageBanner
+                        className="h-25 flex items-center justify-center"
+                        contentClassName="text-left text-4xl text-bold"
+                        title={t.careersPage.whyWorkWithUs.subtitle}
+                        
+                        backgroundImage={WhyWorkWithUsImage[0]}
+                        overlayClassName="bg-red-600/60"
+                    />
+
+                <section className="py-40">
                     <div className="container mx-auto px-4 lg:px-8 xl:px-16">
-                        <div className="text-center mb-16">
+                        {/* <div className="text-center mb-16">
                             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                                 {t.careersPage.whyWorkWithUs.title}
                             </h2>
                             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                                 {t.careersPage.whyWorkWithUs.subtitle}
                             </p>
-                        </div>
+                        </div> */}
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
                             <Card className="p-6 text-center hover:shadow-lg transition-shadow duration-300">
                                 <CardHeader className="pb-4">
@@ -139,6 +152,8 @@ export default function CareersPage() {
                         </div>
                     </div>
                 </section>
+            </div>
+            <div className='bg-white'>
                 <CurrentOpeningsSection />
                 <Separator className="bg-black/10" />
                 <ApplicationFormSection
@@ -147,6 +162,7 @@ export default function CareersPage() {
                     submitStatus={submitStatus}
                     submitMessage={submitMessage}
                 />
+                </div>
             </main>
             <Footer />
         </>
