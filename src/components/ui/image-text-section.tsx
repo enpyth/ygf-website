@@ -149,7 +149,7 @@ export function ImageWithNoText({
 }) {
   return (
     <section
-      className={cn("w-full flex overflow-hidden m-0 p-0 h-200", className)}
+      className={cn("w-full flex overflow-hidden m-0 p-0 h-200 bg-white", className)}
     >
       {/* 文字部分 */}
       <div
