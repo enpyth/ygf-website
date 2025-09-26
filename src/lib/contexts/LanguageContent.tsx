@@ -263,7 +263,7 @@ const en: Strings = {
   },
   franchisePage: {
     hero: {
-      title: 'Partner With YGF Australia',
+      title: 'About Franchising',
       subtitle: 'As a YGF Australia Franchise Partner, you are more than an investor \n— you are joining the world’s largest and most recognized Malatang brand, with over 6,000 stores worldwide and rapid growth in Australia.',
 
     },
