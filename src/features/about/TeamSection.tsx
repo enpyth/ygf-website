@@ -22,7 +22,7 @@ export function TeamSection() {
                     <Card className="text-center hover:shadow-lg transition-shadow duration-300">
                         <CardHeader className="pb-2">
                             <Avatar className="w-24 h-24 mx-auto mb-4">
-                                <AvatarImage src="https://i.pravatar.cc/150?img=11" alt="Founder" />
+                                <AvatarImage src="/tmp/avatar_tmp.jpg" alt="Founder" />
                                 <AvatarFallback className="text-lg">F</AvatarFallback>
                             </Avatar>
                             <div>
@@ -41,7 +41,7 @@ export function TeamSection() {
                     <Card className="text-center hover:shadow-lg transition-shadow duration-300">
                         <CardHeader className="pb-2">
                             <Avatar className="w-24 h-24 mx-auto mb-4">
-                                <AvatarImage src="https://i.pravatar.cc/150?img=12" alt="Co-Founder" />
+                                <AvatarImage src="/tmp/avatar_tmp.jpg" alt="Co-Founder" />
                                 <AvatarFallback className="text-lg">CF</AvatarFallback>
                             </Avatar>
                             <div>
@@ -60,7 +60,7 @@ export function TeamSection() {
                     <Card className="text-center hover:shadow-lg transition-shadow duration-300">
                         <CardHeader className="pb-4">
                             <Avatar className="w-24 h-24 mx-auto mb-4">
-                                <AvatarImage src="https://i.pravatar.cc/150?img=13" alt="Marketing Manager" />
+                                <AvatarImage src="/tmp/avatar_tmp.jpg" alt="Marketing Manager" />
                                 <AvatarFallback className="text-lg">MM</AvatarFallback>
                             </Avatar>
                             <div>

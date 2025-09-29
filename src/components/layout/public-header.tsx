@@ -95,7 +95,7 @@ export default function PublicHeader() {
             <div className="absolute inset-0 pointer-events-none"></div>
 
             <div className="container mx-auto px-4">
-                <div className="flex h-16 items-center justify-between">
+                <div className="flex h-24 items-center justify-between">
                     <div className="flex items-center gap-2">
                         <Link href="/" className="block h-full">
                             <Image src="/logo.jpg" alt="YGF Australia" className='h-full object-cover' width={165} height={165} />
@@ -105,29 +105,29 @@ export default function PublicHeader() {
                         </Link> */}
                         <Separator orientation="vertical" className="h-4 bg-white/20" />
                         <nav className="hidden md:flex items-center gap-2">
-                            <Button variant="ghost" size="lg" asChild className="text-md text-bold text-white hover:bg-white/10 hover:text-white data-[state=open]:bg-white">
+                            <Button variant="ghost" size="lg" asChild className="text-xl text-bold text-white hover:bg-white/10 hover:text-white data-[state=open]:bg-white">
                                 <Link href="/">Home</Link>
                             </Button>
-                            <Button variant="ghost" size="lg" asChild className="text-md text-bold text-white hover:bg-white/10 hover:text-white data-[state=open]:bg-white">
+                            <Button variant="ghost" size="lg" asChild className="text-xl text-bold text-white hover:bg-white/10 hover:text-white data-[state=open]:bg-white">
                                 <Link href="/about">{t.header.about}</Link>
                             </Button>
-                            <Button variant="ghost" size="lg" asChild className="text-md text-bold text-white hover:bg-white/10 hover:text-white data-[state=open]:bg-white">
+                            <Button variant="ghost" size="lg" asChild className="text-xl text-bold text-white hover:bg-white/10 hover:text-white data-[state=open]:bg-white">
                                 <Link href="/products">{t.header.products}</Link>
                             </Button>
-                            <Button variant="ghost" size="lg" asChild className="text-md text-bold text-white hover:bg-white/10 hover:text-white data-[state=open]:bg-white">
+                            <Button variant="ghost" size="lg" asChild className="text-xl text-bold text-white hover:bg-white/10 hover:text-white data-[state=open]:bg-white">
                                 <Link href="/stores">{t.header.store}</Link>
                             </Button>
                             
-                            <Button variant="ghost" size="lg" asChild className="text-md text-bold text-white hover:bg-white/10 hover:text-white data-[state=open]:bg-white">
+                            <Button variant="ghost" size="lg" asChild className="text-xl text-bold text-white hover:bg-white/10 hover:text-white data-[state=open]:bg-white">
                                 <Link href="/franchise">{t.header.franchise}</Link>
                             </Button>
-                            <Button variant="ghost" size="lg" asChild className="text-md text-bold text-white hover:bg-white/10 hover:text-white data-[state=open]:bg-white">
+                            <Button variant="ghost" size="lg" asChild className="text-xl text-bold text-white hover:bg-white/10 hover:text-white data-[state=open]:bg-white">
                                 <Link href="/careers">{t.header.careers}</Link>
                             </Button>
                             {/* <Button variant="ghost" size="sm" asChild className="text-white hover:bg-white/10 hover:text-white data-[state=open]:bg-white/10">
                                 <Link href="/contact">{t.header.contact}</Link>
                             </Button> */}
-                            <Button variant="ghost" size="lg" asChild className="text-md text-bold text-white hover:bg-white/10 hover:text-white data-[state=open]:bg-white">
+                            <Button variant="ghost" size="lg" asChild className="text-xl text-bold text-white hover:bg-white/10 hover:text-white data-[state=open]:bg-white">
                                 <Link href="/membership">{t.header.membership}</Link>
                             </Button>
                         </nav>

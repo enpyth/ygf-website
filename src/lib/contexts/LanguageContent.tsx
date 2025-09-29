@@ -209,20 +209,20 @@ const en: Strings = {
       subtitle: 'We are hiring across Australia for roles including:',
       positions: {
         frontOfHouse: {
-          title: 'Front of House Team Member',
-          description: 'Welcoming guests, taking orders, and ensuring great service',
+          title: 'Executive Chef',
+          description: 'Responsible for the creation of all menu items, ensuring quality and consistency across all dishes.',
         },
         kitchenStaff: {
           title: 'Kitchen Staff',
-          description: 'Preparing fresh ingredients and creating authentic Malatang dishes',
+          description: 'Responsible for the preparation of all menu items, ensuring quality and consistency across all dishes.',
         },
-        shiftLeaders: {
-          title: 'Shift Leaders & Store Managers',
-          description: 'Leading teams, managing operations, and driving success',
+        Waiter: {
+          title: 'Waiter',
+          description: 'Responsible for the service of all menu items, ensuring quality and consistency across all dishes.',
         },
-        headOffice: {
-          title: 'Head Office & Franchise Support',
-          description: 'Opportunities in HR, marketing, supply chain, and operations (Adelaide HQ)',
+        empty: {
+          title: 'Stay Tuned',
+          description: 'More opportunities will be available soon! Please check back soon.',
         },
       },
       location: 'Australia Wide',

@@ -103,7 +103,8 @@ export function TextLeftImageRight({
 }: Omit<ImageTextSectionProps, "variant">) {
   return (
     <section
-      className={cn("w-full flex overflow-hidden m-0 p-0 h-135", className)}
+      className={cn("w-full flex overflow-hidden m-0 p-0 h-135 object-contain", className)}
+      
     >
       {/* 文字部分 */}
       <div
@@ -126,9 +127,60 @@ export function TextLeftImageRight({
       </div>
 
       {/* 图片部分 */}
-      <div className="w-1/2 relative overflow-hidden">
-        <Image src={image.src} alt={image.alt} fill className="object-cover" />
+      <div className="w-1/2 relative overflow-hidden object-contain">
+        <Image src={image.src} alt={image.alt} fill className="object-cover"/>
       </div>
+    </section>
+  );
+}
+
+//没有文字的变体
+export function ImageWithNoText({
+  image,
+  title,
+  description,
+  variant = "image-with-no-text",
+  className,
+  textBackgroundColor = "bg-background",
+  titleColor = "text-foreground",
+  descriptionColor = "text-muted-foreground",
+}: Omit<ImageTextSectionProps, "variant"> & {
+  variant: "image-with-no-text";
+}) {
+  return (
+    <section
+      className={cn("w-full flex overflow-hidden m-0 p-0 h-200 bg-white", className)}
+    >
+      {/* 文字部分 */}
+      <div
+        className={cn(
+          "w-0 flex flex-col justify-center items-center p-0",
+          textBackgroundColor
+        )}
+      >
+        {/* <div className="max-w-md text-center">
+          <h2 className={cn("text-3xl font-bold mb-1", titleColor)}>{title}</h2>
+          <p className={cn("text-lg text-left text-muted-foreground leading-relaxed mb-6", descriptionColor)}>
+            {description.split("\n").map((line, index) => (
+              <React.Fragment key={index}>
+                {line}
+                <br />
+              </React.Fragment>
+            ))}
+          </p>
+        </div> */}
+      </div>
+
+      {/* 图片部分 */}
+      <div className="w-full h-auto relative">
+        <Image
+          src={image.src}
+          alt={image.alt}
+          fill
+          className="object-contain"
+        />
+      </div>
+
     </section>
   );
 }
@@ -152,7 +204,7 @@ export function ImageLeftTextRightWithButton({
 }) {
   return (
     <section
-      className={cn("w-full flex overflow-hidden m-0 p-0 h-135", className)}
+      className={cn("w-full flex overflow-hidden m-0 p-0 h-110", className)}
     >
       {/* 图片部分 */}
       <div className="w-1/2 relative overflow-hidden">
@@ -221,7 +273,7 @@ export function TextLeftImageRightWithButton({
 }) {
   return (
     <section
-      className={cn("w-full flex overflow-hidden m-0 p-0 h-135", className)}
+      className={cn("w-full flex overflow-hidden m-0 p-0 h-110", className)}
     >
       {/* 文字部分 */}
       <div className="w-1/2 flex flex-col justify-center items-center p-8 bg-background">

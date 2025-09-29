@@ -36,6 +36,22 @@ export const stores: Store[] = [
         features: ['Modern dine-in experience', 'Convenient takeaway options', 'Student-friendly promotions']
     },
     {
+        // TODO Shop9/1-3 Metro Parade, Mawson Lakes SA 5095
+        id: 'mawson-lakes',
+        name: 'Metro Parade',
+        address: 'Metro Parade, Mawson Lakes',
+        tag: 'Opening',
+        iconType: 'star',
+        coordinates: { lat: -34.8, lng: 138.6 },
+        status: 'open',
+        phone: '+61 8 8231 1234',
+        hours: [
+            'Monday - Friday: 11:00 AM - 9:00 PM',
+            'Saturday - Sunday: 10:00 AM - 10:00 PM'
+        ],
+        description: 'Our second store located in the heart of Mawson Lakes, offering authentic Chinese cuisine with modern dining experience.',
+    },
+    {
         id: 'marion-westfield',
         name: 'Marion Westfield (Opening Nov 2025)',
         address: 'Westfield Marion, Adelaide',
@@ -47,9 +63,9 @@ export const stores: Store[] = [
     },
     {
         id: 'brisbane-cbd',
-        name: 'Brisbane CBD (Opening late 2025)',
+        name: 'Brisbane CBD (Opening Nov 2025)',
         address: 'Brisbane CBD',
-        tag: 'Opening late 2025',
+        tag: 'Opening Nov 2025',
         iconType: 'schedule',
         coordinates: { lat: -27.4698, lng: 153.0251 },
         status: 'opening',

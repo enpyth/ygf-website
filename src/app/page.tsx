@@ -5,7 +5,7 @@ import Footer from '@/components/layout/Footer'
 import PageBanner from '@/components/layout/PageBanner2'
 import HomePageBanner from '@/features/home/Banner-shadcn'
 import { ImageLeftTextRightWithButton, TextLeftImageRightWithButton } from '@/components/ui/image-text-section'
-import { TextImage13, TextImage13WithButton } from '@/components/ui/text-image-1-3'
+import { TextImage13 } from '@/features/home/TextImage13'
 export default function HomePage() {
   const backgroundImage = [
     {
@@ -62,7 +62,6 @@ export default function HomePage() {
         <div style={{ position: 'relative' }}>
           <PageBanner
             title={'Our News'}
-            subtitle="Get 20% OFF ALL DISHES"
             backgroundImage={NewsImage[0]}
             redirectTo="/franchise"
           />
@@ -70,12 +69,13 @@ export default function HomePage() {
         <div style={{ position: 'relative' }}>
           <TextImage13
             image={TestimonialsImage[0]}
-            title={'What Our\nClients Say'}
-            subtitle="Hear from our satisfied customers about their experience with our services."
-            description1={'Delicious food, super clean place, and really fast service. Loved it!\n -Xiangzhe'}
-            
-            description2={'The best Chinese hotpot in Adelaide unless the boss decides to open a second store in city. Authentic flavours that make me coming back at least three times a week. Always five-star experience! Btw, the staff are super kind and adorable.\n -Hans'}
-            description3={'A wonderful place for hot pot. Love the soup bases and the variety of fresh ingredients to use.\nMost definitely coming back.\n -Margaret'}
+            title={'What Our Clients Say'}
+            descriptions={[
+              '"The best Chinese hotpot in Adelaide unless the boss decides to open a second store in city. Authentic flavors that make me coming back at least three times a week. Always five-star experience! Btw, the staff are super kind and adorable." - Hans',
+              '"A wonderful place for hot pot. Love the soup bases and the variety of fresh ingredients to use. \nMost definitely coming back." - Margaret',
+              '"Delicious food, super clean place, and really fast service. Loved it!" - Xiangzhe',
+              '"Very delicious food, the price is also very affordable. Dry mix is a classic taste, bone soup is also very tasty. As a Chinese food well worth trying, I will come again next time. In addition, the staff are friendly and good attitude." - Boya'
+            ]}
           />
         </div>
       </main>

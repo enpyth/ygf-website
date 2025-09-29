@@ -101,7 +101,7 @@ export default function TitleImageCarousel({
             </div>
 
             {/* Arrows */}
-            {showArrows && items.length > 1 && (
+            {/* {showArrows && items.length > 1 && (
                 <>
                     <button
                         aria-label="Previous"
@@ -118,7 +118,7 @@ export default function TitleImageCarousel({
                         <ArrowForwardIosIcon />
                     </button>
                 </>
-            )}
+            )} */}
 
             {/* Indicators */}
             {showIndicators && items.length > 1 && (

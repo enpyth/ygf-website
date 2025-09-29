@@ -32,7 +32,7 @@ export function FAQSection({ title, questions, className }: FAQSectionProps) {
             )}
             onClick={toggleExpanded}
         >
-            <CardHeader className="mb-0 pb-0 -mb-8">
+            <CardHeader>
                 <CardTitle className="flex items-center justify-between text-lg font-semibold">
                     <span>{title}</span>
                     <div className="flex items-center">

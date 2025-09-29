@@ -33,11 +33,17 @@ export function ImageTextCard({
                         minHeight: '200px'
                     }}
                 >
-                    <img
-                        src={image.src}
-                        alt={image.alt}
-                        className="w-full h-full object-cover"
-                    />
+                    {image.src ? (
+                        <img
+                            src={image.src}
+                            alt={image.alt}
+                            className="w-full h-full object-cover"
+                        />
+                    ) : (
+                        <div className="w-full h-full bg-white flex items-center justify-center">
+                            <span className="text-gray-600 text-sm text-center px-2">{image.alt}</span>
+                        </div>
+                    )}
                 </div>
 
                 {/* Text Section */}

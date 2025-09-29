@@ -24,11 +24,9 @@ export function ApplicationFormSection({
     const formRef = useRef<HTMLFormElement>(null)
 
     const positions = [
-        { value: 'front-of-house', label: t.careersPage.currentOpenings.positions.frontOfHouse.title },
-        { value: 'kitchen-staff', label: t.careersPage.currentOpenings.positions.kitchenStaff.title },
-        { value: 'shift-leader', label: t.careersPage.currentOpenings.positions.shiftLeaders.title },
-        { value: 'store-manager', label: t.careersPage.currentOpenings.positions.shiftLeaders.title },
-        { value: 'head-office', label: t.careersPage.currentOpenings.positions.headOffice.title },
+        { value: 'Executive Chef', label: t.careersPage.currentOpenings.positions.frontOfHouse.title },
+        { value: 'Kitchen Staff', label: t.careersPage.currentOpenings.positions.kitchenStaff.title },
+        { value: 'Waiter', label: t.careersPage.currentOpenings.positions.Waiter.title },
         { value: 'other', label: 'Other' },
     ]
 

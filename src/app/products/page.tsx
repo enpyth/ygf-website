@@ -136,7 +136,7 @@ export default function ProductsPage() {
                 <ColorSeparator
                     title="Top Soup Bases We Offer"
                     description='Explore our crowd-pleasing favorites, each embodying the essence of our healthy, delicious, and fresh philosophy. Customise your own hotpot experience with our wide variety of offerings.'
-                    backgroundColor="bg-black"
+                    backgroundColor="bg-[#292322]"
                     titleColor="text-white"
                     descriptionColor="text-white"
                     minHeight="max-h-[200px]"
@@ -175,11 +175,6 @@ export default function ProductsPage() {
                             titleSize: 'text-2xl'
                         }
                     ]}
-                />
-                {/* 页脚 */}
-                <ColorSeparator
-                    backgroundColor="bg-[#A1221F]"
-                    minHeight="min-h-[325px]"
                 />
                 <Footer />
             </div>

@@ -157,7 +157,7 @@ export default function StorePage() {
                                             <Button
                                                 variant="contained"
                                                 fullWidth
-                                                onClick={() => router.push(`/store/${selected.id}`)}
+                                                onClick={() => router.push(`/stores/${selected.id}`)}
                                                 disabled={selected.status !== 'open'}
                                             >
                                                 {selected.status === 'open' ? 'View Store Details' : 'Coming Soon'}
@@ -191,10 +191,6 @@ export default function StorePage() {
                     </Box>
                 </div>
             </main>
-            <ColorSeparator
-            backgroundColor="bg-[#A1221F]"
-            minHeight="min-h-[325px]"
-                />
             <Footer />  
         </>
     )

@@ -39,7 +39,7 @@ export function CurrentOpeningsSection() {
                             <div className="flex items-center gap-4 text-sm text-muted-foreground">
                                 <div className="flex items-center gap-2">
                                     <MapPin className="w-4 h-4" />
-                                    {t.careersPage.currentOpenings.australiaWide}
+                                    Australia, SA
                                 </div>
                                 <div className="flex items-center gap-2">
                                     <Clock className="w-4 h-4" />
@@ -47,7 +47,7 @@ export function CurrentOpeningsSection() {
                                 </div>
                                 <div className="flex items-center gap-2">
                                     <Users className="w-4 h-4" />
-                                    {t.careersPage.currentOpenings.entryLevel}
+                                    {t.careersPage.currentOpenings.years2Plus}
                                 </div>
                             </div>
                         </CardContent>
@@ -73,7 +73,7 @@ export function CurrentOpeningsSection() {
                             <div className="flex items-center gap-4 text-sm text-muted-foreground">
                                 <div className="flex items-center gap-2">
                                     <MapPin className="w-4 h-4" />
-                                    {t.careersPage.currentOpenings.australiaWide}
+                                    Australia, SA
                                 </div>
                                 <div className="flex items-center gap-2">
                                     <Clock className="w-4 h-4" />
@@ -92,48 +92,14 @@ export function CurrentOpeningsSection() {
                             <div className="flex items-start justify-between">
                                 <div className="flex-1">
                                     <CardTitle className="text-xl font-semibold mb-2">
-                                        {t.careersPage.currentOpenings.positions.shiftLeaders.title}
+                                        Adelaide, SA
                                     </CardTitle>
                                     <p className="text-muted-foreground mb-4">
-                                        {t.careersPage.currentOpenings.positions.shiftLeaders.description}
+                                        {t.careersPage.currentOpenings.positions.Waiter.description}
                                     </p>
                                 </div>
                                 <div className="w-12 h-12 bg-primary/20 dark:bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
                                     <TrendingUp className="w-6 h-6 text-primary" />
-                                </div>
-                            </div>
-                        </CardHeader>
-                        <CardContent>
-                            <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                                <div className="flex items-center gap-2">
-                                    <MapPin className="w-4 h-4" />
-                                    {t.careersPage.currentOpenings.australiaWide}
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <Clock className="w-4 h-4" />
-                                    {t.careersPage.currentOpenings.fullTime}
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <Users className="w-4 h-4" />
-                                    {t.careersPage.currentOpenings.years2Plus}
-                                </div>
-                            </div>
-                        </CardContent>
-                    </Card>
-
-                    <Card className="p-6 hover:shadow-lg transition-shadow duration-300">
-                        <CardHeader className="pb-4">
-                            <div className="flex items-start justify-between">
-                                <div className="flex-1">
-                                    <CardTitle className="text-xl font-semibold mb-2">
-                                        {t.careersPage.currentOpenings.positions.headOffice.title}
-                                    </CardTitle>
-                                    <p className="text-muted-foreground mb-4">
-                                        {t.careersPage.currentOpenings.positions.headOffice.description}
-                                    </p>
-                                </div>
-                                <div className="w-12 h-12 bg-primary/20 dark:bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <Building2 className="w-6 h-6 text-primary" />
                                 </div>
                             </div>
                         </CardHeader>
@@ -149,7 +115,41 @@ export function CurrentOpeningsSection() {
                                 </div>
                                 <div className="flex items-center gap-2">
                                     <Users className="w-4 h-4" />
-                                    {t.careersPage.currentOpenings.years3Plus}
+                                    {t.careersPage.currentOpenings.entryLevel}
+                                </div>
+                            </div>
+                        </CardContent>
+                    </Card>
+
+                    <Card className="p-6 hover:shadow-lg transition-shadow duration-300">
+                        <CardHeader className="pb-4">
+                            <div className="flex items-start justify-between">
+                                <div className="flex-1">
+                                    <CardTitle className="text-xl font-semibold mb-2">
+                                        {t.careersPage.currentOpenings.positions.empty.title}
+                                    </CardTitle>
+                                    <p className="text-muted-foreground mb-4">
+                                        {t.careersPage.currentOpenings.positions.empty.description}
+                                    </p>
+                                </div>
+                                <div className="w-12 h-12 bg-primary/20 dark:bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <Building2 className="w-6 h-6 text-primary" />
+                                </div>
+                            </div>
+                        </CardHeader>
+                        <CardContent>
+                            <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                                <div className="flex items-center gap-2">
+                                    <MapPin className="w-4 h-4" />
+                                    Adelaide, SA
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <Clock className="w-4 h-4" />
+                                    {t.careersPage.currentOpenings.partTimeFullTime}
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <Users className="w-4 h-4" />
+                                    {t.careersPage.currentOpenings.entryLevel}
                                 </div>
                             </div>
                         </CardContent>

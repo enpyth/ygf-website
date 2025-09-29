@@ -32,7 +32,7 @@ const timelineData = [
     date: "Year 2003",
     image: {
       src: "/timeline/tl-1.png",
-      alt: "Company founding moment",
+      alt: "",
     },
     cardText:
       "In 2003, the first YGF hotpot restaurant was opened in Harbin, China, and became an instant local hit.",
@@ -42,7 +42,7 @@ const timelineData = [
     date: "Year 2009",
     image: {
       src: "/timeline/tl-2.png",
-      alt: "Product launch celebration",
+      alt: "",
     },
     cardText:
       "In 2009, Mr. Guofu Yang has registered his name as a trademark, launched a nationwide franchise program, and built standardised soup base factories and logistics systems.",
@@ -52,7 +52,7 @@ const timelineData = [
     date: "Year 2010",
     image: {
       src: "/timeline/tl-3.png",
-      alt: "Series A funding announcement",
+      alt: "",
     },
     cardText:
       "By 2010, YGF had over 1,000 stores, expanding from its Northeastern roots to become a household name across China.",
@@ -62,7 +62,7 @@ const timelineData = [
     date: "Year 2017",
     image: {
       src: "/timeline/tl-4.png",
-      alt: "International office opening",
+      alt: "",
     },
     cardText: "The first YGF international store opened in Canada.",
   },
@@ -71,10 +71,20 @@ const timelineData = [
     date: "Year 2025",
     image: {
       src: "/timeline/tl-5.png",
-      alt: "IPO preparation meeting",
+      alt: "",
     },
     cardText:
       "By 2025, YGF operates nearly 7,000 stores in over 20 countries worldwide.",
+  },
+  {
+    id: 6,
+    date: "Future",
+    image: {
+      src: "",
+      alt: "",
+    },
+    cardText:
+      "Next Milestone",
   },
 
 ];
@@ -87,7 +97,7 @@ export function TimelineSection() {
       </h2>
 
       {/* Cards above timeline - dynamically generated from timelineData */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 mb-4">
       
         {timelineData.map((item, index) => (
           <ImageTextCard
@@ -132,8 +142,8 @@ export default function AboutPage() {
   ];
   const LookingAheadImage = [
     {
-      src: "/about/LookingAhead.png",
-      alt: "Looking Ahead Image",
+      src: "/about/vision.jpg",
+      alt: "Vision Image",
     },
   ]
 
@@ -153,14 +163,8 @@ export default function AboutPage() {
           textBackgroundColor="bg-[#A1221F]"
           titleColor="text-white"
           descriptionColor="text-white whitespace-pre-line"
-          title="Looking Ahead"
-          description={[
-            "• November 2025: Marion store opens (South Australia)",
-            "• Flagship on Gouger Street, Adelaide, plus Brisbane CBD launch",
-            "• Continued growth with two new SA stores",
-            "• Sydney flagship opening",
-            "• 30 YGF stores nationwide, establishing YGF as the leading Malatang brand in Australia",
-          ].join("\n")}
+          title="Our Vision"
+          description="YGF Australia became the exclusive master franchisee in May 2025, marking a new chapter for the world’s largest hotpot brand. This year, we are opening three new stores, including a landmark AUD 2 million flagship in Adelaide’s Chinatown — set to be the largest hotpot restaurant in Australia. The flagship will combine modern dining with cultural showcases such as Face-Changing Opera Show, Chinese Kung Fu Tea Performance, and Hanfu displays, creating a vibrant hub for multicultural exchange. Looking ahead, our roadmap is clear: 30 stores nationwide by 2028, supported by central kitchens and integrated supply chains. Our vision is to build Australia’s leading hotpot brand — Fresh, authentic, and made your way — while sharing Chinese culture in ways that connect with Australia’s diverse communities."
           image={LookingAheadImage[0]}
         />
       </main>

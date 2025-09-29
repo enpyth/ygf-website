@@ -52,7 +52,7 @@ export function FranchiseeStoriesSection({
                         <Card key={index} className="text-center duration-300 bg-white/1 border-none">
                             <CardHeader>
                                 <Avatar className="w-50 h-50 mx-auto mb-1">
-                                    <AvatarImage src="https://i.pravatar.cc/150?img=1" alt="Founder" />
+                                    <AvatarImage src="/tmp/avatar_tmp.jpg" alt="Founder" />
                                     <AvatarFallback className="text-lg">F</AvatarFallback>
                                 </Avatar>
 
