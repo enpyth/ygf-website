@@ -21,8 +21,8 @@ export interface Store {
 export const stores: Store[] = [
     {
         id: 'adelaide-cbd',
-        name: 'Adelaide CBD Chinatown – Flagship',
-        address: 'Adelaide Chinatown',
+        name: 'Adelaide Chinatown Flagship',
+        address: '99 Gouger Street, Adelaide, SA 5000',
         tag: 'Flagship',
         iconType: 'star',
         coordinates: { lat: -34.9285, lng: 138.6007 },
@@ -36,10 +36,9 @@ export const stores: Store[] = [
         features: ['Modern dine-in experience', 'Convenient takeaway options', 'Student-friendly promotions']
     },
     {
-        // TODO Shop9/1-3 Metro Parade, Mawson Lakes SA 5095
         id: 'mawson-lakes',
-        name: 'Metro Parade',
-        address: 'Metro Parade, Mawson Lakes',
+        name: 'Adelaide Mawsonlakes Store',
+        address: 'Shop9,1-3 Metro Parade, Mawson Lakes, SA 5095',
         tag: 'Opening',
         iconType: 'star',
         coordinates: { lat: -34.8, lng: 138.6 },
@@ -53,8 +52,8 @@ export const stores: Store[] = [
     },
     {
         id: 'marion-westfield',
-        name: 'Marion Westfield (Opening Nov 2025)',
-        address: 'Westfield Marion, Adelaide',
+        name: 'Adelaide Marion Store',
+        address: 'Shop 1149, Westfield Marion, 297 Diagonal Road, Oaklands Park SA 5046',
         tag: 'Opening Nov 2025',
         iconType: 'schedule',
         coordinates: { lat: -35.0180, lng: 138.5710 },
@@ -63,24 +62,24 @@ export const stores: Store[] = [
     },
     {
         id: 'brisbane-cbd',
-        name: 'Brisbane CBD (Opening Nov 2025)',
-        address: 'Brisbane CBD',
+        name: 'Brisbane Store',
+        address: 'Shop T-09 Burpengary East Shopping Centre 116-122 Buckley Road, Burpengary East QLD 4505',
         tag: 'Opening Nov 2025',
         iconType: 'schedule',
         coordinates: { lat: -27.4698, lng: 153.0251 },
         status: 'opening',
         description: 'Expanding to Brisbane CBD! Our new Queensland location will feature the same quality and service you love.'
     },
-    {
-        id: 'more-locations',
-        name: 'More locations coming soon',
-        address: 'Australia',
-        tag: 'Coming soon',
-        iconType: 'schedule',
-        coordinates: { lat: -25.0, lng: 133.0 },
-        status: 'coming-soon',
-        description: 'We are actively looking for new locations across Australia. Stay tuned for updates!'
-    }
+    // {
+    //     id: 'more-locations',
+    //     name: 'More locations coming soon',
+    //     address: 'Australia',
+    //     tag: 'Coming soon',
+    //     iconType: 'schedule',
+    //     coordinates: { lat: -25.0, lng: 133.0 },
+    //     status: 'coming-soon',
+    //     description: 'We are actively looking for new locations across Australia. Stay tuned for updates!'
+    // }
 ]
 
 // Helper function to get icon component

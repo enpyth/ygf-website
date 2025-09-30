@@ -9,13 +9,18 @@ import { Store } from '@/app/stores/data'
 interface GoogleMapProps {
     stores: Store[]
     height?: string
+    selectedStoreId?: string
+    initialCenter?: { lat: number; lng: number }
+    initialZoom?: number
+    autoFitToMarkers?: boolean
 }
 
-export default function GoogleMap({ stores, height = '500px' }: GoogleMapProps) {
+export default function GoogleMap({ stores, height = '500px', selectedStoreId, initialCenter, initialZoom, autoFitToMarkers = true }: GoogleMapProps) {
     const mapRef = useRef<HTMLDivElement>(null)
     const mapInstanceRef = useRef<google.maps.Map | null>(null)
     const markersRef = useRef<google.maps.Marker[]>([])
     const infoWindowsRef = useRef<google.maps.InfoWindow[]>([])
+    const markerMapRef = useRef<Record<string, { marker: google.maps.Marker, infoWindow: google.maps.InfoWindow }>>({})
     const router = useRouter()
     const [isLoaded, setIsLoaded] = useState(false)
 
@@ -41,8 +46,8 @@ export default function GoogleMap({ stores, height = '500px' }: GoogleMapProps) 
                 }
 
                 const map = new Map(mapRef.current, {
-                    center: { lat: -25.0, lng: 133.0 }, // 澳大利亚中心
-                    zoom: 4,
+                    center: initialCenter ?? { lat: -25.0, lng: 133.0 }, // 默认澳大利亚中心
+                    zoom: initialZoom ?? 4,
                     styles: [
                         {
                             featureType: 'poi',
@@ -59,6 +64,7 @@ export default function GoogleMap({ stores, height = '500px' }: GoogleMapProps) 
                 mapInstanceRef.current = map
 
                 // 创建标记和信息窗口
+                markerMapRef.current = {}
                 stores.forEach((store) => {
                     const marker = new google.maps.Marker({
                         position: store.coordinates,
@@ -96,28 +102,28 @@ export default function GoogleMap({ stores, height = '500px' }: GoogleMapProps) 
 
                     markersRef.current.push(marker)
                     infoWindowsRef.current.push(infoWindow)
+                    markerMapRef.current[store.id] = { marker, infoWindow }
                 })
 
-                // 自动调整地图视图以包含所有标记
-                if (stores.length > 0) {
-                    if (stores.length === 1) {
-                        // 单个门店时，直接设置中心点和缩放级别
-                        map.setCenter(stores[0].coordinates)
-                        map.setZoom(15)
-                    } else {
-                        // 多个门店时，使用边界调整
-                        const bounds = new google.maps.LatLngBounds()
-                        stores.forEach(store => {
-                            bounds.extend(store.coordinates)
-                        })
-                        map.fitBounds(bounds)
-                        
-                        // 如果标记太集中，设置最小缩放级别
-                        google.maps.event.addListenerOnce(map, 'bounds_changed', () => {
-                            if (map.getZoom()! > 8) {
-                                map.setZoom(8)
-                            }
-                        })
+                // 自动调整地图视图以包含所有标记（可配置）
+                if (autoFitToMarkers) {
+                    if (stores.length > 0) {
+                        if (stores.length === 1) {
+                            map.setCenter(stores[0].coordinates)
+                            map.setZoom(15)
+                        } else {
+                            const bounds = new google.maps.LatLngBounds()
+                            stores.forEach(store => {
+                                bounds.extend(store.coordinates)
+                            })
+                            map.fitBounds(bounds)
+                            
+                            google.maps.event.addListenerOnce(map, 'bounds_changed', () => {
+                                if (map.getZoom()! > 8) {
+                                    map.setZoom(8)
+                                }
+                            })
+                        }
                     }
                 }
 
@@ -136,7 +142,37 @@ export default function GoogleMap({ stores, height = '500px' }: GoogleMapProps) 
             markersRef.current = []
             infoWindowsRef.current = []
         }
-    }, [stores, router])
+    }, [stores, router, initialCenter, initialZoom, autoFitToMarkers])
+
+    // Focus and open info window when a store is selected from outside
+    useEffect(() => {
+        if (!selectedStoreId || !isLoaded) return
+        const map = mapInstanceRef.current
+        if (!map) return
+
+        const entry = markerMapRef.current[selectedStoreId]
+        let targetLatLng: google.maps.LatLng | null = null
+
+        if (entry) {
+            // Close others, open selected
+            infoWindowsRef.current.forEach(win => win.close())
+            entry.infoWindow.open(map, entry.marker)
+            targetLatLng = entry.marker.getPosition() as google.maps.LatLng
+            console.log('GoogleMap move to marker position for', selectedStoreId, targetLatLng?.toString())
+        } else {
+            // Fallback: compute from stores prop
+            const fallback = stores.find(s => s.id === selectedStoreId)
+            if (fallback) {
+                targetLatLng = new google.maps.LatLng(fallback.coordinates.lat, fallback.coordinates.lng)
+                console.log('GoogleMap move to fallback coordinates for', selectedStoreId, fallback.coordinates)
+            }
+        }
+
+        if (targetLatLng) {
+            console.log('GoogleMap setOptions center/zoom to', targetLatLng?.toString())
+            map.setOptions({ center: targetLatLng, zoom: 10 })
+        }
+    }, [selectedStoreId, isLoaded, stores])
 
     const getMarkerIcon = (status: string) => {
         const baseIcon = {

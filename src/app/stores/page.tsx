@@ -31,7 +31,7 @@ export default function StorePage() {
     const t = useI18n()
     const router = useRouter()
 
-    const [selectedIndex, setSelectedIndex] = useState(0)
+    const [selectedIndex, setSelectedIndex] = useState(-1)
     const [searchQuery, setSearchQuery] = useState('')
     
     // Filter stores based on search query
@@ -40,7 +40,7 @@ export default function StorePage() {
         store.address.toLowerCase().includes(searchQuery.toLowerCase())
     )
     
-    const selected = filteredStores[selectedIndex] || filteredStores[0]
+    const selected = selectedIndex >= 0 ? filteredStores[selectedIndex] : undefined
     const backgroundImage = [
         {
             src: "/Banner.png",
@@ -63,7 +63,7 @@ export default function StorePage() {
                             value={searchQuery}
                             onChange={(e) => {
                                 setSearchQuery(e.target.value)
-                                setSelectedIndex(0) // Reset selection when searching
+                                setSelectedIndex(-1) // Do not auto-select on search
                             }}
                             InputProps={{
                                 startAdornment: (
@@ -130,7 +130,10 @@ export default function StorePage() {
                                             <ListItemButton
                                                 key={s.id}
                                                 selected={idx === selectedIndex}
-                                                onClick={() => setSelectedIndex(idx)}
+                                                onClick={() => {
+                                                    console.log('Store clicked:', s.id, 'coords:', s.coordinates)
+                                                    setSelectedIndex(idx)
+                                                }}
                                                 sx={{ borderRadius: 1, mb: 1 }}
                                             >
                                                 <LocationOnIcon fontSize="small" sx={{ mr: 1 }} />
@@ -152,15 +155,15 @@ export default function StorePage() {
                                     </List>
 
                                     {/* 查看详情按钮 */}
-                                    {selected && (
+                                        {selected && (
                                         <Box sx={{ mt: 3 }}>
                                             <Button
                                                 variant="contained"
                                                 fullWidth
-                                                onClick={() => router.push(`/stores/${selected.id}`)}
-                                                disabled={selected.status !== 'open'}
+                                                    onClick={() => selected && router.push(`/stores/${selected.id}`)}
+                                                    disabled={selected?.status !== 'open'}
                                             >
-                                                {selected.status === 'open' ? 'View Store Details' : 'Coming Soon'}
+                                                {selected?.status === 'open' ? 'View Store Details' : 'Coming Soon'}
                                             </Button>
                                         </Box>
                                     )}
@@ -184,7 +187,17 @@ export default function StorePage() {
                                     <Typography variant="h6" gutterBottom>
                                         Store Locations
                                     </Typography>
-                                    <GoogleMap stores={filteredStores} height="600px" />
+                                    <GoogleMap 
+                                        stores={filteredStores} 
+                                        height="600px" 
+                                        selectedStoreId={selected?.id}
+                                        initialCenter={{ lat: -28, lng: 138.6007 }}
+                                        initialZoom={5}
+                                        // Adelaide center
+                                        // initialCenter={{ lat: -34.9285, lng: 138.6007 }}
+                                        // initialZoom={11}
+                                        autoFitToMarkers={false}
+                                    />
                                 </CardContent>
                             </Card>
                         </Box>
