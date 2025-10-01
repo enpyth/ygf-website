@@ -190,13 +190,11 @@ export default function StorePage() {
                                     <GoogleMap 
                                         stores={filteredStores} 
                                         height="600px" 
-                                        selectedStoreId={selected?.id}
                                         initialCenter={{ lat: -28, lng: 138.6007 }}
                                         initialZoom={5}
                                         // Adelaide center
                                         // initialCenter={{ lat: -34.9285, lng: 138.6007 }}
                                         // initialZoom={11}
-                                        autoFitToMarkers={false}
                                     />
                                 </CardContent>
                             </Card>
