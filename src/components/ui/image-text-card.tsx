@@ -55,7 +55,7 @@ export function ImageTextCard({
                         justifyContent: 'center'
                     }}
                 >
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <p className={`text-sm text-muted-foreground leading-relaxed ${className?.includes('text-center') ? 'text-center' : ''}`}>
                         {text}
                     </p>
                 </div>

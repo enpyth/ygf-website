@@ -101,7 +101,7 @@ export function TimelineSection() {
       
         {timelineData.map((item, index) => (
           <ImageTextCard
-            className="h-100"
+            className={`h-100 ${index === timelineData.length - 1 ? 'text-center' : ''}`}
             key={item.id}
             image={item.image}
             text={item.cardText}
