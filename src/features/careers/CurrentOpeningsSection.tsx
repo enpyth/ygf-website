@@ -92,7 +92,7 @@ export function CurrentOpeningsSection() {
                             <div className="flex items-start justify-between">
                                 <div className="flex-1">
                                     <CardTitle className="text-xl font-semibold mb-2">
-                                        Adelaide, SA
+                                        {t.careersPage.currentOpenings.positions.Waiter.title}
                                     </CardTitle>
                                     <p className="text-muted-foreground mb-4">
                                         {t.careersPage.currentOpenings.positions.Waiter.description}

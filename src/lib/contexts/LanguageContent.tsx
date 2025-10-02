@@ -217,8 +217,8 @@ const en: Strings = {
           description: 'Responsible for the preparation of all menu items, ensuring quality and consistency across all dishes.',
         },
         Waiter: {
-          title: 'Waiter',
-          description: 'Responsible for the service of all menu items, ensuring quality and consistency across all dishes.',
+          title: 'Front of House',
+          description: 'Provide customer service by taking orders, serving food, clearing tables, assisting with reception and billing, maintaining cleanliness, and supporting daily restaurant operations.',
         },
         empty: {
           title: 'Stay Tuned',
