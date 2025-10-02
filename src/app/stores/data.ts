@@ -70,16 +70,16 @@ export const stores: Store[] = [
         status: 'opening',
         description: 'Expanding to Brisbane CBD! Our new Queensland location will feature the same quality and service you love.'
     },
-    // {
-    //     id: 'more-locations',
-    //     name: 'More locations coming soon',
-    //     address: 'Australia',
-    //     tag: 'Coming soon',
-    //     iconType: 'schedule',
-    //     coordinates: { lat: -25.0, lng: 133.0 },
-    //     status: 'coming-soon',
-    //     description: 'We are actively looking for new locations across Australia. Stay tuned for updates!'
-    // }
+    {
+        id: 'more-locations',
+        name: 'More locations coming soon',
+        address: 'Australia',
+        tag: 'Coming soon',
+        iconType: 'schedule',
+        coordinates: { lat: -25.0, lng: 133.0 },
+        status: 'coming-soon',
+        description: 'We are actively looking for new locations across Australia. Stay tuned for updates!'
+    }
 ]
 
 // Helper function to get icon component

@@ -31,7 +31,7 @@ export default function StorePage() {
     const t = useI18n()
     const router = useRouter()
 
-    const [selectedIndex, setSelectedIndex] = useState(-1)
+    const [selectedIndex, setSelectedIndex] = useState(0)
     const [searchQuery, setSearchQuery] = useState('')
     
     // Filter stores based on search query
