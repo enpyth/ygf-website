@@ -111,7 +111,7 @@ export function CurrentOpeningsSection() {
                                 </div>
                                 <div className="flex items-center gap-2">
                                     <Clock className="w-4 h-4" />
-                                    {t.careersPage.currentOpenings.fullTime}
+                                    {t.careersPage.currentOpenings.partTimeFullTime}
                                 </div>
                                 <div className="flex items-center gap-2">
                                     <Users className="w-4 h-4" />
