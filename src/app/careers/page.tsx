@@ -5,13 +5,14 @@ import Footer from '@/components/layout/Footer'
 import PageBanner from '@/components/layout/PageBanner'
 import { Separator } from '@/components/ui/separator'
 import { useI18n } from '@/lib/contexts/LanguageContent'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import {
     WhyWorkWithUsSection,
     CurrentOpeningsSection,
     AdditionalInfoSection,
     ApplicationFormSection
 } from '@/features/careers'
+import { type CareersEmailRef } from '@/components/form/careers-email'
 import { Card, CardHeader, CardContent, CardTitle } from '@/components/ui/card'
 import { Building2, Users } from 'lucide-react'
 import { TrendingUp } from 'lucide-react'
@@ -22,6 +23,7 @@ export default function CareersPage() {
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
     const [submitMessage, setSubmitMessage] = useState('')
+    const careersEmailRef = useRef<CareersEmailRef>(null as any)
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -31,6 +33,12 @@ export default function CareersPage() {
 
         try {
             const formData = new FormData(e.currentTarget)
+            
+            // Add resume file if it exists
+            const resumeFile = careersEmailRef.current?.getResumeFile()
+            if (resumeFile) {
+                formData.append('resume', resumeFile)
+            }
 
             const response = await fetch('/api/email/careers', { method: 'POST', body: formData })
             const result = await response.json()
@@ -157,6 +165,7 @@ export default function CareersPage() {
                     isSubmitting={isSubmitting}
                     submitStatus={submitStatus}
                     submitMessage={submitMessage}
+                    careersEmailRef={careersEmailRef}
                 />
                 </div>
             </main>

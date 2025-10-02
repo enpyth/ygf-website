@@ -11,17 +11,22 @@ interface ApplicationFormSectionProps {
     isSubmitting: boolean
     submitStatus: 'idle' | 'success' | 'error'
     submitMessage: string
+    franchiseFormRef?: React.RefObject<FranchiseFormRef>
 }
 
 export function ApplicationFormSection({
     onSubmit,
     isSubmitting,
     submitStatus,
-    submitMessage
+    submitMessage,
+    franchiseFormRef: parentRef
 }: ApplicationFormSectionProps) {
     const t = useI18n()
     const franchiseFormRef = useRef<FranchiseFormRef>(null)
     const formRef = useRef<HTMLFormElement>(null)
+    
+    // Use parent ref if provided, otherwise use local ref
+    const refToUse = parentRef || franchiseFormRef
 
     return (
         <section id="franchise-form" className="py-20">
@@ -65,7 +70,7 @@ export function ApplicationFormSection({
                                 <FranchiseForm
                                     buttonLabel={isSubmitting ? t.franchisePage.application.submittingButton : t.franchisePage.application.submitButton}
                                     isSubmitting={isSubmitting}
-                                    ref={franchiseFormRef}
+                                    ref={refToUse}
                                 />
                             </form>
                         </CardContent>

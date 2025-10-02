@@ -154,9 +154,9 @@ const CareersEmail = React.forwardRef<CareersEmailRef, CareersEmailProps>((props
                             <Typography variant="body2" color="text.secondary">
                                 Drag and drop your resume here, or click to browse
                             </Typography>
-                            <Typography variant="caption" color="text.secondary">
-                                Accepted formats: PDF, DOC, DOCX, TXT (max 10MB)
-                            </Typography>
+                                    <Typography variant="caption" color="text.secondary">
+                                        Accepted formats: PDF, DOC, DOCX, TXT (max 5MB)
+                                    </Typography>
                         </Box>
                     )}
                 </Paper>

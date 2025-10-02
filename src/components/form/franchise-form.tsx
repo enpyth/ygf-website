@@ -245,7 +245,7 @@ const FranchiseForm = React.forwardRef<FranchiseFormRef, FranchiseFormProps>((pr
                                         Upload receipt
                                     </Typography>
                                     <Typography variant="caption" color="text.secondary">
-                                        PDF, JPG, PNG (max 10MB)
+                                        PDF, JPG, PNG (max 5MB)
                                     </Typography>
                                 </Box>
                             )}
@@ -297,7 +297,7 @@ const FranchiseForm = React.forwardRef<FranchiseFormRef, FranchiseFormProps>((pr
                                         Upload resume/CV
                                     </Typography>
                                     <Typography variant="caption" color="text.secondary">
-                                        PDF, DOC, DOCX, TXT (max 10MB)
+                                        PDF, DOC, DOCX, TXT (max 5MB)
                                     </Typography>
                                 </Box>
                             )}

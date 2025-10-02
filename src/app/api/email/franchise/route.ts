@@ -37,6 +37,14 @@ export async function POST(request: NextRequest) {
         let resumeData = null
 
         if (resumeFile) {
+            // Check file size (5MB limit)
+            if (resumeFile.size > 5 * 1024 * 1024) {
+                return NextResponse.json(
+                    { error: 'Resume file size exceeds 5MB limit' },
+                    { status: 400 }
+                )
+            }
+            
             // Convert file to base64 for storage/transmission
             const arrayBuffer = await resumeFile.arrayBuffer()
             const base64 = Buffer.from(arrayBuffer).toString('base64')
@@ -44,6 +52,30 @@ export async function POST(request: NextRequest) {
                 fileName: resumeFile.name,
                 fileType: resumeFile.type,
                 fileSize: resumeFile.size,
+                base64: base64
+            }
+        }
+
+        // Handle receipt file
+        const receiptFile = formData.get('receipt') as File | null
+        let receiptData = null
+
+        if (receiptFile) {
+            // Check file size (5MB limit)
+            if (receiptFile.size > 5 * 1024 * 1024) {
+                return NextResponse.json(
+                    { error: 'Receipt file size exceeds 5MB limit' },
+                    { status: 400 }
+                )
+            }
+            
+            // Convert file to base64 for storage/transmission
+            const arrayBuffer = await receiptFile.arrayBuffer()
+            const base64 = Buffer.from(arrayBuffer).toString('base64')
+            receiptData = {
+                fileName: receiptFile.name,
+                fileType: receiptFile.type,
+                fileSize: receiptFile.size,
                 base64: base64
             }
         }
@@ -80,17 +112,40 @@ export async function POST(request: NextRequest) {
             message,
             hasResume: !!resumeData,
             resumeFileName: resumeData?.fileName,
+            hasReceipt: !!receiptData,
+            receiptFileName: receiptData?.fileName,
         })
 
-        const attachments = resumeData
-            ? [
-                {
-                    filename: resumeData.fileName,
-                    content: resumeData.base64,
-                    content_type: resumeData.fileType,
-                },
-            ]
-            : undefined
+        // Prepare attachments
+        const attachments = []
+        if (resumeData) {
+            attachments.push({
+                filename: resumeData.fileName,
+                content: resumeData.base64,
+                type: resumeData.fileType,
+            })
+        }
+        if (receiptData) {
+            attachments.push({
+                filename: receiptData.fileName,
+                content: receiptData.base64,
+                type: receiptData.fileType,
+            })
+        }
+
+        const emailPayload = {
+            from: fromAddress,
+            to: [toAddress],
+            subject: `[Website] Franchise Application: ${firstName} ${lastName}`,
+            html,
+            reply_to: email,
+            attachments: attachments.length > 0 ? attachments : undefined,
+        }
+
+        console.log('Sending franchise email with payload:', {
+            ...emailPayload,
+            attachments: attachments.length > 0 ? `[${attachments.length} attachments]` : 'none'
+        })
 
         const resendResponse = await fetch('https://api.resend.com/emails', {
             method: 'POST',
@@ -98,14 +153,7 @@ export async function POST(request: NextRequest) {
                 'Authorization': `Bearer ${apiKey}`,
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-                from: fromAddress,
-                to: [toAddress],
-                subject: `[Website] Franchise Application: ${firstName} ${lastName}`,
-                html,
-                reply_to: email,
-                attachments,
-            }),
+            body: JSON.stringify(emailPayload),
         })
 
         if (!resendResponse.ok) {
@@ -152,6 +200,8 @@ function generateFranchiseEmailHtml(data: {
     message: string
     hasResume: boolean
     resumeFileName?: string
+    hasReceipt: boolean
+    receiptFileName?: string
 }) {
     const fundingLabels: { [key: string]: string } = {
         'under-50k': 'Under $50,000',
@@ -243,6 +293,16 @@ function generateFranchiseEmailHtml(data: {
                     <div class="resume">
                         <span class="label">File:</span> ${data.resumeFileName}
                         <br><em>Resume attached to this email</em>
+                    </div>
+                </div>
+                ` : ''}
+
+                ${data.hasReceipt ? `
+                <div class="section">
+                    <h2>Application Fee Receipt</h2>
+                    <div class="resume">
+                        <span class="label">File:</span> ${data.receiptFileName}
+                        <br><em>Receipt attached to this email</em>
                     </div>
                 </div>
                 ` : ''}

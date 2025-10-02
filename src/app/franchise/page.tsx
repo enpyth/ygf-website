@@ -5,7 +5,7 @@ import Footer from "@/components/layout/Footer";
 import PageBanner from "@/components/layout/PageBanner";
 import { Separator } from "@/components/ui/separator";
 import { useI18n } from "@/lib/contexts/LanguageContent";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { ImageTextSection } from "@/components/ui/image-text-section";
 import {
   JobDescriptionSection,
@@ -15,6 +15,7 @@ import {
   ApplicationProcessSection,
   ApplicationFormSection,
 } from "@/features/franchise";
+import { type FranchiseFormRef } from "@/components/form/franchise-form";
 import { TextLeftImageRight } from "@/components/ui/image-text-section";
 import { ColorSeparator } from "@/components/ui/color-separator";
 import { TitleImageSection } from "@/components/ui/title-image-section";
@@ -27,6 +28,7 @@ export default function FranchisePage() {
     "idle" | "success" | "error"
   >("idle");
   const [submitMessage, setSubmitMessage] = useState("");
+  const franchiseFormRef = useRef<FranchiseFormRef>(null as any);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -36,6 +38,18 @@ export default function FranchisePage() {
 
     try {
       const formData = new FormData(e.currentTarget);
+      
+      // Add resume file if it exists
+      const resumeFile = franchiseFormRef.current?.getResumeFile();
+      if (resumeFile) {
+        formData.append('resume', resumeFile);
+      }
+      
+      // Add receipt file if it exists
+      const receiptFile = franchiseFormRef.current?.getReceiptFile();
+      if (receiptFile) {
+        formData.append('receipt', receiptFile);
+      }
 
       const response = await fetch("/api/email/franchise", {
         method: "POST",
@@ -151,6 +165,7 @@ export default function FranchisePage() {
             isSubmitting={isSubmitting}
             submitStatus={submitStatus}
             submitMessage={submitMessage}
+            franchiseFormRef={franchiseFormRef}
           />
         </div>
       </main>

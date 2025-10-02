@@ -41,6 +41,14 @@ export async function POST(request: NextRequest) {
         let resumeData = null
 
         if (resumeFile) {
+            // Check file size (5MB limit)
+            if (resumeFile.size > 5 * 1024 * 1024) {
+                return NextResponse.json(
+                    { error: 'Resume file size exceeds 5MB limit' },
+                    { status: 400 }
+                )
+            }
+            
             // Convert file to base64 for storage/transmission
             const arrayBuffer = await resumeFile.arrayBuffer()
             const base64 = Buffer.from(arrayBuffer).toString('base64')
@@ -50,6 +58,8 @@ export async function POST(request: NextRequest) {
                 fileSize: resumeFile.size,
                 base64: base64
             }
+        } else {
+            console.log('No resume file provided')
         }
 
         // Validate required fields
@@ -97,11 +107,20 @@ export async function POST(request: NextRequest) {
                 {
                     filename: resumeData.fileName,
                     content: resumeData.base64,
-                    content_type: resumeData.fileType,
+                    type: resumeData.fileType,
                 },
             ]
             : undefined
 
+
+        const emailPayload = {
+            from: fromAddress,
+            to: [toAddress],
+            subject: `[Website] Career Application: ${applicationData.position}`,
+            html,
+            reply_to: applicationData.email,
+            attachments,
+        }
 
         const resendResponse = await fetch('https://api.resend.com/emails', {
             method: 'POST',
@@ -109,14 +128,7 @@ export async function POST(request: NextRequest) {
                 'Authorization': `Bearer ${apiKey}`,
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-                from: fromAddress,
-                to: [toAddress],
-                subject: `[Website] Career Application: ${applicationData.position}`,
-                html,
-                reply_to: applicationData.email,
-                attachments,
-            }),
+            body: JSON.stringify(emailPayload),
         })
 
         if (!resendResponse.ok) {

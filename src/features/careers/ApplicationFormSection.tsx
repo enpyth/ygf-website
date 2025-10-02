@@ -11,17 +11,22 @@ interface ApplicationFormSectionProps {
     isSubmitting: boolean
     submitStatus: 'idle' | 'success' | 'error'
     submitMessage: string
+    careersEmailRef?: React.RefObject<CareersEmailRef>
 }
 
 export function ApplicationFormSection({
     onSubmit,
     isSubmitting,
     submitStatus,
-    submitMessage
+    submitMessage,
+    careersEmailRef: parentRef
 }: ApplicationFormSectionProps) {
     const t = useI18n()
     const careersEmailRef = useRef<CareersEmailRef>(null)
     const formRef = useRef<HTMLFormElement>(null)
+    
+    // Use parent ref if provided, otherwise use local ref
+    const refToUse = parentRef || careersEmailRef
 
     const positions = [
         { value: 'Executive Chef', label: t.careersPage.currentOpenings.positions.frontOfHouse.title },
@@ -73,7 +78,7 @@ export function ApplicationFormSection({
                                     buttonLabel={isSubmitting ? t.careersPage.application.submittingButton : t.careersPage.application.submitButton}
                                     positions={positions}
                                     isSubmitting={isSubmitting}
-                                    ref={careersEmailRef}
+                                    ref={refToUse}
                                 />
                             </form>
                         </CardContent>
