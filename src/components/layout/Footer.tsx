@@ -65,11 +65,11 @@ export default function Footer() {
               <div className="space-y-2 text-sm">
                 <p className="flex items-center gap-2 text-white/90">
                   <Phone className="h-4 w-4 text-white/80" />
-                  <span></span>
+                  <span>087119 8917</span>
                 </p>
                 <p className="flex items-center gap-2 text-white/90">
                   <Mail className="h-4 w-4 text-white/80" />
-                  <span>guofuyang2025@gmail.com</span>
+                  <span>admin@ygfaustralia.com</span>
                 </p>
                 <p className="flex items-center gap-2 text-white/90">
                   <MapPin className="h-4 w-4 text-white/80" />
