@@ -364,7 +364,7 @@ const en: Strings = {
           questions: [
             {
               question: 'Is the application deposit refundable?',
-              answer: 'The application deposit is AUD $100 and is non-refundable.'
+              answer: 'The application deposit is AUD $2,000 and is non-refundable.'
             },
             {
               question: 'How long will it take to come through the application process?',
@@ -913,7 +913,7 @@ const zh: Strings = {
           questions: [
             {
               question: '申请押金可以退还吗？',
-              answer: '申请押金为100澳元，不可退还。'
+              answer: '申请押金为2,000澳元，不可退还。'
             },
             {
               question: '申请流程需要多长时间？',
