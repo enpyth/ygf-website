@@ -28,10 +28,10 @@ export const stores: Store[] = [
         coordinates: { lat: -34.9285, lng: 138.6007 },
         status: 'open',
         // phone: '+61 087119 8917',
-        hours: [
-            'Monday - Friday: 11:00 AM - 9:00 PM',
-            'Saturday - Sunday: 10:00 AM - 10:00 PM'
-        ],
+        // hours: [
+        //     'Monday - Friday: 11:00 AM - 9:00 PM',
+        //     'Saturday - Sunday: 10:00 AM - 10:00 PM'
+        // ],
         description: 'Our flagship store located in the heart of Adelaide Chinatown, offering authentic Chinese cuisine with modern dining experience.',
         features: ['Modern dine-in experience', 'Convenient takeaway options', 'Student-friendly promotions']
     },
@@ -44,10 +44,10 @@ export const stores: Store[] = [
         coordinates: { lat: -34.8, lng: 138.6 },
         status: 'open',
         phone: '+61 087119 8917',
-        hours: [
-            'Monday - Friday: 11:00 AM - 9:00 PM',
-            'Saturday - Sunday: 10:00 AM - 10:00 PM'
-        ],
+        // hours: [
+        //     'Monday - Friday: 11:00 AM - 9:00 PM',
+        //     'Saturday - Sunday: 10:00 AM - 10:00 PM'
+        // ],
         description: 'Our second store located in the heart of Mawson Lakes, offering authentic Chinese cuisine with modern dining experience.',
     },
     {
