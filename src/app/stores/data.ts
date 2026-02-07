@@ -27,7 +27,7 @@ export const stores: Store[] = [
         iconType: 'star',
         coordinates: { lat: -34.9285, lng: 138.6007 },
         status: 'open',
-        phone: '+61 087119 8917',
+        // phone: '+61 087119 8917',
         hours: [
             'Monday - Friday: 11:00 AM - 9:00 PM',
             'Saturday - Sunday: 10:00 AM - 10:00 PM'
