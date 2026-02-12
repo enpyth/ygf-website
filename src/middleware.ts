@@ -47,7 +47,8 @@ export async function middleware(request: NextRequest) {
     '/stores',
     '/auth',
     '/dashboard',
-    '/api'
+    '/api',
+    '/privacy-policy'
   ]
 
   // Check if the current path is a valid route or a sub-route of valid routes

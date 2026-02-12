@@ -8,6 +8,7 @@ import {
   Phone,
   Mail,
   MapPin,
+  Globe,
 } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 
@@ -103,28 +104,28 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* <Separator className="my-8 bg-white/20" /> */}
+          <Separator className="my-8 bg-white/20" />
 
           {/* Bottom Bar: Copyright, Links, Language Selector */}
-          {/* <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-4 text-sm">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-4 text-sm">
           
           <div className="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
             <p className="text-white/80">
               © 2025 YGF Australia. All rights reserved.
             </p>
             <nav className="flex flex-wrap justify-center gap-x-4 gap-y-2">
-              <Link href="#" className="hover:text-white text-white/80 transition-colors">
+              {/* <Link href="#" className="hover:text-white text-white/80 transition-colors">
                 Sitemap
+              </Link> */}
+              <Link href="/privacy-policy" className="hover:text-white text-white/80 transition-colors">
+                Privacy Policy
               </Link>
-              <Link href="#" className="hover:text-white text-white/80 transition-colors">
-                Terms and Privacy
-              </Link>
-              <Link href="#" className="hover:text-white text-white/80 transition-colors">
+              {/* <Link href="#" className="hover:text-white text-white/80 transition-colors">
                 Security
               </Link>
               <Link href="#" className="hover:text-white text-white/80 transition-colors">
                 Cookie Settings
-              </Link>
+              </Link> */}
             </nav>
           </div>
 
@@ -134,7 +135,7 @@ export default function Footer() {
             <span>Australia - EN</span>
             
           </div>
-        </div> */}
+        </div>
         </div>
       </div>
     </footer>
