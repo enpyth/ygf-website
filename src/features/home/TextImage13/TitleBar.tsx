@@ -1,26 +1,24 @@
-'use client'
+"use client";
 
-import React from 'react'
+import React from "react";
 
 export interface TitleBarProps {
-    title: string
+  title: string;
 }
 
 export function TitleBar({ title }: TitleBarProps) {
-    return (
-        <div className="w-full bg-black text-white py-4 px-6 flex items-center justify-center">
-            <h2 className="text-3xl font-bold text-center">
-                {title.split('\n').map((line, i) => (
-                    <React.Fragment key={i}>
-                        {line}
-                        <br />
-                    </React.Fragment>
-                ))}
-            </h2>
-        </div>
-    )
+  return (
+    <div className="flex w-full items-center justify-center bg-black px-5 py-4 text-white sm:px-6">
+      <h2 className="text-center text-2xl font-bold sm:text-3xl">
+        {title.split("\n").map((line, i) => (
+          <React.Fragment key={i}>
+            {line}
+            <br />
+          </React.Fragment>
+        ))}
+      </h2>
+    </div>
+  );
 }
 
-export default TitleBar
-
-
+export default TitleBar;

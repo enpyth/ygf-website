@@ -34,29 +34,31 @@ export function ImageTextSection({
   return (
     <section
       className={cn(
-        "w-full flex overflow-hidden m-0 p-0 h-135 ",
+        "m-0 flex w-full flex-col overflow-hidden p-0 md:min-h-[34rem] md:flex-row",
 
-        className
+        className,
       )}
     >
       {/* 图片部分 */}
-      <div className="w-1/2 relative overflow-hidden">
+      <div className="relative min-h-[16rem] w-full overflow-hidden sm:min-h-[20rem] md:min-h-full md:w-1/2">
         <Image src={image.src} alt={image.alt} fill className="object-cover" />
       </div>
 
       {/* 文字部分 */}
       <div
         className={cn(
-          "w-1/2 flex flex-col justify-center items-center p-8",
-          textBackgroundColor
+          "flex w-full flex-col items-center justify-center px-5 py-10 sm:px-8 sm:py-12 md:w-1/2 md:p-8 lg:p-12",
+          textBackgroundColor,
         )}
       >
-        <div className="max-w-md text-center">
-          <h2 className={cn("text-3xl font-bold mb-4", titleColor)}>{title}</h2>
+        <div className="max-w-xl text-center md:max-w-md">
+          <h2 className={cn("mb-4 text-2xl font-bold sm:text-3xl", titleColor)}>
+            {title}
+          </h2>
           <p
             className={cn(
-              "text-lg text-left leading-relaxed whitespace-pre-line",
-              descriptionColor
+              "text-left text-base leading-relaxed whitespace-pre-line sm:text-lg",
+              descriptionColor,
             )}
           >
             {description}
@@ -103,19 +105,28 @@ export function TextLeftImageRight({
 }: Omit<ImageTextSectionProps, "variant">) {
   return (
     <section
-      className={cn("w-full flex overflow-hidden m-0 p-0 h-135 object-contain", className)}
-      
+      className={cn(
+        "m-0 flex w-full flex-col-reverse overflow-hidden p-0 md:min-h-[34rem] md:flex-row md:object-contain",
+        className,
+      )}
     >
       {/* 文字部分 */}
       <div
         className={cn(
-          "w-1/2 flex flex-col justify-center items-center p-8",
-          textBackgroundColor
+          "flex w-full flex-col items-center justify-center px-5 py-10 sm:px-8 sm:py-12 md:w-1/2 md:p-8 lg:p-12",
+          textBackgroundColor,
         )}
       >
-        <div className="max-w-md text-center">
-          <h2 className={cn("text-3xl font-bold mb-1", titleColor)}>{title}</h2>
-          <p className={cn("text-lg text-left text-muted-foreground leading-relaxed mb-6", descriptionColor)}>
+        <div className="max-w-xl text-center md:max-w-md">
+          <h2 className={cn("mb-3 text-2xl font-bold sm:text-3xl", titleColor)}>
+            {title}
+          </h2>
+          <p
+            className={cn(
+              "mb-6 text-left text-base leading-relaxed text-muted-foreground sm:text-lg",
+              descriptionColor,
+            )}
+          >
             {description.split("\n").map((line, index) => (
               <React.Fragment key={index}>
                 {line}
@@ -127,8 +138,8 @@ export function TextLeftImageRight({
       </div>
 
       {/* 图片部分 */}
-      <div className="w-1/2 relative overflow-hidden object-contain">
-        <Image src={image.src} alt={image.alt} fill className="object-cover"/>
+      <div className="relative min-h-[16rem] w-full overflow-hidden object-contain sm:min-h-[20rem] md:min-h-full md:w-1/2">
+        <Image src={image.src} alt={image.alt} fill className="object-cover" />
       </div>
     </section>
   );
@@ -149,13 +160,16 @@ export function ImageWithNoText({
 }) {
   return (
     <section
-      className={cn("w-full flex overflow-hidden m-0 p-0 h-200 bg-white", className)}
+      className={cn(
+        "m-0 flex min-h-[22rem] w-full overflow-hidden bg-white p-0 md:min-h-[50rem]",
+        className,
+      )}
     >
       {/* 文字部分 */}
       <div
         className={cn(
           "w-0 flex flex-col justify-center items-center p-0",
-          textBackgroundColor
+          textBackgroundColor,
         )}
       >
         {/* <div className="max-w-md text-center">
@@ -180,7 +194,6 @@ export function ImageWithNoText({
           className="object-contain"
         />
       </div>
-
     </section>
   );
 }
@@ -204,18 +217,23 @@ export function ImageLeftTextRightWithButton({
 }) {
   return (
     <section
-      className={cn("w-full flex overflow-hidden m-0 p-0 h-110", className)}
+      className={cn(
+        "m-0 flex w-full flex-col overflow-hidden p-0 md:min-h-[28rem] md:flex-row",
+        className,
+      )}
     >
       {/* 图片部分 */}
-      <div className="w-1/2 relative overflow-hidden">
+      <div className="relative min-h-[16rem] w-full overflow-hidden sm:min-h-[20rem] md:min-h-full md:w-1/2">
         <Image src={image.src} alt={image.alt} fill className="object-cover" />
       </div>
 
       {/* 文字部分 */}
-      <div className="w-1/2 flex flex-col justify-center items-center p-8 bg-background">
-        <div className="max-w-md text-center">
-          <h2 className="text-3xl font-bold text-foreground mb-4">{title}</h2>
-          <p className="text-lg text-left text-muted-foreground leading-relaxed mb-6">
+      <div className="flex w-full flex-col items-center justify-center bg-background px-5 py-10 sm:px-8 sm:py-12 md:w-1/2 md:p-8 lg:p-12">
+        <div className="max-w-xl text-center md:max-w-md">
+          <h2 className="mb-4 text-2xl font-bold text-foreground sm:text-3xl">
+            {title}
+          </h2>
+          <p className="mb-6 text-left text-base leading-relaxed text-muted-foreground sm:text-lg">
             {description.split("\n").map((line, index) => (
               <React.Fragment key={index}>
                 {line}
@@ -223,31 +241,33 @@ export function ImageLeftTextRightWithButton({
               </React.Fragment>
             ))}
           </p>
-           <Link href={redirectTo}>
-             <Button
-               onClick={onButtonClick}
-               variant="contained"
-               sx={{
-                 backgroundColor: "#991b1b",
-                 color: "white",
-                 borderRadius: "48px",
-                 px: 4,
-                 py: 2,
-                 fontSize: "16px",
-                 fontWeight: 600,
-                 boxShadow: "0 8px 32px rgba(153, 27, 27, 0.4), 0 4px 16px rgba(0, 0, 0, 0.2)",
-                 "&:hover": {
-                   backgroundColor: "#b91c1c",
-                   boxShadow: "0 12px 40px rgba(153, 27, 27, 0.5), 0 6px 20px rgba(0, 0, 0, 0.3)",
-                   transform: "translateY(-2px)",
-                 },
-                 transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-                 textTransform: "none",
-               }}
-             >
-               {buttonText}
-             </Button>
-           </Link>
+          <Link href={redirectTo}>
+            <Button
+              onClick={onButtonClick}
+              variant="contained"
+              sx={{
+                backgroundColor: "#991b1b",
+                color: "white",
+                borderRadius: "48px",
+                px: { xs: 3, sm: 4 },
+                py: { xs: 1.5, sm: 2 },
+                fontSize: { xs: "14px", sm: "16px" },
+                fontWeight: 600,
+                boxShadow:
+                  "0 8px 32px rgba(153, 27, 27, 0.4), 0 4px 16px rgba(0, 0, 0, 0.2)",
+                "&:hover": {
+                  backgroundColor: "#b91c1c",
+                  boxShadow:
+                    "0 12px 40px rgba(153, 27, 27, 0.5), 0 6px 20px rgba(0, 0, 0, 0.3)",
+                  transform: "translateY(-2px)",
+                },
+                transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                textTransform: "none",
+              }}
+            >
+              {buttonText}
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
@@ -273,45 +293,52 @@ export function TextLeftImageRightWithButton({
 }) {
   return (
     <section
-      className={cn("w-full flex overflow-hidden m-0 p-0 h-110", className)}
+      className={cn(
+        "m-0 flex w-full flex-col-reverse overflow-hidden p-0 md:min-h-[28rem] md:flex-row",
+        className,
+      )}
     >
       {/* 文字部分 */}
-      <div className="w-1/2 flex flex-col justify-center items-center p-8 bg-background">
-        <div className="max-w-md text-center">
-          <h2 className="text-3xl font-bold text-foreground mb-4">{title}</h2>
-          <p className="text-lg text-left text-muted-foreground leading-relaxed mb-6">
+      <div className="flex w-full flex-col items-center justify-center bg-background px-5 py-10 sm:px-8 sm:py-12 md:w-1/2 md:p-8 lg:p-12">
+        <div className="max-w-xl text-center md:max-w-md">
+          <h2 className="mb-4 text-2xl font-bold text-foreground sm:text-3xl">
+            {title}
+          </h2>
+          <p className="mb-6 text-left text-base leading-relaxed text-muted-foreground sm:text-lg">
             {description}
           </p>
-           <Link href={redirectTo}>
-             <Button
-               onClick={onButtonClick}
-               variant="contained"
-               sx={{
-                 backgroundColor: "#991b1b",
-                 color: "white",
-                 borderRadius: "48px",
-                 px: 4,
-                 py: 2,
-                 fontSize: "16px",
-                 fontWeight: 600,
-                 boxShadow: "0 8px 32px rgba(153, 27, 27, 0.4), 0 4px 16px rgba(0, 0, 0, 0.2)",
-                 "&:hover": {
-                   backgroundColor: "#b91c1c",
-                   boxShadow: "0 12px 40px rgba(153, 27, 27, 0.5), 0 6px 20px rgba(0, 0, 0, 0.3)",
-                   transform: "translateY(-2px)",
-                 },
-                 transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-                 textTransform: "none",
-               }}
-             >
-               {buttonText}
-             </Button>
-           </Link>
+          <Link href={redirectTo}>
+            <Button
+              onClick={onButtonClick}
+              variant="contained"
+              sx={{
+                backgroundColor: "#991b1b",
+                color: "white",
+                borderRadius: "48px",
+                px: { xs: 3, sm: 4 },
+                py: { xs: 1.5, sm: 2 },
+                fontSize: { xs: "14px", sm: "16px" },
+                fontWeight: 600,
+                boxShadow:
+                  "0 8px 32px rgba(153, 27, 27, 0.4), 0 4px 16px rgba(0, 0, 0, 0.2)",
+                "&:hover": {
+                  backgroundColor: "#b91c1c",
+                  boxShadow:
+                    "0 12px 40px rgba(153, 27, 27, 0.5), 0 6px 20px rgba(0, 0, 0, 0.3)",
+                  transform: "translateY(-2px)",
+                },
+                transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                textTransform: "none",
+              }}
+            >
+              {buttonText}
+            </Button>
+          </Link>
         </div>
       </div>
 
       {/* 图片部分 */}
-      <div className="w-1/2 relative overflow-hidden">
+      <div className="relative min-h-[16rem] w-full overflow-hidden sm:min-h-[20rem] md:min-h-full md:w-1/2">
         <Image src={image.src} alt={image.alt} fill className="object-cover" />
       </div>
     </section>
