@@ -1,90 +1,105 @@
-'use client'
+"use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { HeadphonesIcon } from 'lucide-react'
-import { useI18n } from '@/lib/contexts/LanguageContent'
-import CareersEmail, { type CareersEmailRef } from '@/components/form/careers-email'
-import { useRef, useState } from 'react'
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { HeadphonesIcon } from "lucide-react";
+import { useI18n } from "@/lib/contexts/LanguageContent";
+import CareersEmail, {
+  type CareersEmailRef,
+} from "@/components/form/careers-email";
+import { useRef, useState } from "react";
 
 interface ApplicationFormSectionProps {
-    onSubmit: (e: React.FormEvent<HTMLFormElement>) => Promise<void>
-    isSubmitting: boolean
-    submitStatus: 'idle' | 'success' | 'error'
-    submitMessage: string
-    careersEmailRef?: React.RefObject<CareersEmailRef>
+  onSubmit: (e: React.FormEvent<HTMLFormElement>) => Promise<void>;
+  isSubmitting: boolean;
+  submitStatus: "idle" | "success" | "error";
+  submitMessage: string;
+  careersEmailRef?: React.RefObject<CareersEmailRef>;
 }
 
 export function ApplicationFormSection({
-    onSubmit,
-    isSubmitting,
-    submitStatus,
-    submitMessage,
-    careersEmailRef: parentRef
+  onSubmit,
+  isSubmitting,
+  submitStatus,
+  submitMessage,
+  careersEmailRef: parentRef,
 }: ApplicationFormSectionProps) {
-    const t = useI18n()
-    const careersEmailRef = useRef<CareersEmailRef>(null)
-    const formRef = useRef<HTMLFormElement>(null)
-    
-    // Use parent ref if provided, otherwise use local ref
-    const refToUse = parentRef || careersEmailRef
+  const t = useI18n();
+  const careersEmailRef = useRef<CareersEmailRef>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
-    const positions = [
-        { value: 'Executive Chef', label: t.careersPage.currentOpenings.positions.frontOfHouse.title },
-        { value: 'Kitchen Staff', label: t.careersPage.currentOpenings.positions.kitchenStaff.title },
-        { value: 'Waiter', label: t.careersPage.currentOpenings.positions.Waiter.title },
-        { value: 'other', label: 'Other' },
-    ]
+  // Use parent ref if provided, otherwise use local ref
+  const refToUse = parentRef || careersEmailRef;
 
-    return (
-        <section className="py-20">
-            <div className="container mx-auto px-4 lg:px-8 xl:px-16">
-                <div className="max-w-4xl mx-auto">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                            {t.careersPage.application.title}
-                        </h2>
-                        <p className="text-xl text-muted-foreground">
-                            {t.careersPage.application.subtitle}
-                        </p>
-                    </div>
+  const positions = [
+    {
+      value: "Executive Chef",
+      label: t.careersPage.currentOpenings.positions.frontOfHouse.title,
+    },
+    {
+      value: "Kitchen Staff",
+      label: t.careersPage.currentOpenings.positions.kitchenStaff.title,
+    },
+    {
+      value: "Waiter",
+      label: t.careersPage.currentOpenings.positions.Waiter.title,
+    },
+    { value: "other", label: "Other" },
+  ];
 
-                    <Card className="p-8 bg-white dark:bg-black">
-                        <CardHeader className="pb-6">
-                            <CardTitle className="text-2xl font-semibold flex items-center gap-2">
-                                <HeadphonesIcon className="w-6 h-6 text-blue-600" />
-                                {t.careersPage.application.formTitle}
-                            </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <form onSubmit={onSubmit} className="space-y-6" ref={formRef}>
-                                {/* Submit Status Messages */}
-                                {submitStatus === 'success' && (
-                                    <div className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
-                                        <p className="text-green-800 dark:text-green-200 text-sm">
-                                            {submitMessage}
-                                        </p>
-                                    </div>
-                                )}
+  return (
+    <section className="py-20">
+      <div className="container mx-auto px-4 lg:px-8 xl:px-16">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+              {t.careersPage.application.title}
+            </h2>
+            <p className="text-xl text-neutral-600">
+              {t.careersPage.application.subtitle}
+            </p>
+          </div>
 
-                                {submitStatus === 'error' && (
-                                    <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
-                                        <p className="text-red-800 dark:text-red-200 text-sm">
-                                            {submitMessage}
-                                        </p>
-                                    </div>
-                                )}
+          <Card className="border-neutral-200 bg-white p-8 text-neutral-900 shadow-sm">
+            <CardHeader className="pb-6">
+              <CardTitle className="text-2xl font-semibold flex items-center gap-2 text-neutral-900">
+                <HeadphonesIcon className="w-6 h-6 text-blue-600" />
+                {t.careersPage.application.formTitle}
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <form onSubmit={onSubmit} className="space-y-6" ref={formRef}>
+                {/* Submit Status Messages */}
+                {submitStatus === "success" && (
+                  <div className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
+                    <p className="text-green-800 dark:text-green-200 text-sm">
+                      {submitMessage}
+                    </p>
+                  </div>
+                )}
 
-                                <CareersEmail
-                                    buttonLabel={isSubmitting ? t.careersPage.application.submittingButton : t.careersPage.application.submitButton}
-                                    positions={positions}
-                                    isSubmitting={isSubmitting}
-                                    ref={refToUse}
-                                />
-                            </form>
-                        </CardContent>
-                    </Card>
-                </div>
-            </div>
-        </section>
-    )
+                {submitStatus === "error" && (
+                  <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
+                    <p className="text-red-800 dark:text-red-200 text-sm">
+                      {submitMessage}
+                    </p>
+                  </div>
+                )}
+
+                <CareersEmail
+                  buttonLabel={
+                    isSubmitting
+                      ? t.careersPage.application.submittingButton
+                      : t.careersPage.application.submitButton
+                  }
+                  positions={positions}
+                  isSubmitting={isSubmitting}
+                  ref={refToUse}
+                />
+              </form>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+  );
 }
