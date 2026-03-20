@@ -1,38 +1,40 @@
-'use client'
+"use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { HeadphonesIcon } from 'lucide-react'
-import { useI18n } from '@/lib/contexts/LanguageContent'
-import FranchiseForm, { type FranchiseFormRef } from '@/components/form/franchise-form'
-import { useRef } from 'react'
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { HeadphonesIcon } from "lucide-react";
+import { useI18n } from "@/lib/contexts/LanguageContent";
+import FranchiseForm, {
+  type FranchiseFormRef,
+} from "@/components/form/franchise-form";
+import { useRef } from "react";
 
 interface ApplicationFormSectionProps {
-    onSubmit: (e: React.FormEvent<HTMLFormElement>) => Promise<void>
-    isSubmitting: boolean
-    submitStatus: 'idle' | 'success' | 'error'
-    submitMessage: string
-    franchiseFormRef?: React.RefObject<FranchiseFormRef>
+  onSubmit: (e: React.FormEvent<HTMLFormElement>) => Promise<void>;
+  isSubmitting: boolean;
+  submitStatus: "idle" | "success" | "error";
+  submitMessage: string;
+  franchiseFormRef?: React.RefObject<FranchiseFormRef>;
 }
 
 export function ApplicationFormSection({
-    onSubmit,
-    isSubmitting,
-    submitStatus,
-    submitMessage,
-    franchiseFormRef: parentRef
+  onSubmit,
+  isSubmitting,
+  submitStatus,
+  submitMessage,
+  franchiseFormRef: parentRef,
 }: ApplicationFormSectionProps) {
-    const t = useI18n()
-    const franchiseFormRef = useRef<FranchiseFormRef>(null)
-    const formRef = useRef<HTMLFormElement>(null)
-    
-    // Use parent ref if provided, otherwise use local ref
-    const refToUse = parentRef || franchiseFormRef
+  const t = useI18n();
+  const franchiseFormRef = useRef<FranchiseFormRef>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
-    return (
-        <section id="franchise-form" className="py-20">
-            <div className="container mx-auto px-4 lg:px-8 xl:px-16">
-                <div className="max-w-4xl mx-auto">
-                    {/* <div className="text-center mb-12">
+  // Use parent ref if provided, otherwise use local ref
+  const refToUse = parentRef || franchiseFormRef;
+
+  return (
+    <section id="franchise-form" className="py-20">
+      <div className="container mx-auto px-4 lg:px-8 xl:px-16">
+        <div className="max-w-4xl mx-auto">
+          {/* <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                             {t.franchisePage.application.title}
                         </h2>
@@ -41,42 +43,46 @@ export function ApplicationFormSection({
                         </p>
                     </div> */}
 
-                    <Card className="p-8 bg-white dark:bg-black">
-                        <CardHeader className="pb-6">
-                            <CardTitle className="text-2xl font-semibold flex items-center gap-2">
-                                <HeadphonesIcon className="w-6 h-6 text-blue-600" />
-                                {t.franchisePage.application.formTitle}
-                            </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <form onSubmit={onSubmit} className="space-y-6" ref={formRef}>
-                                {/* Submit Status Messages */}
-                                {submitStatus === 'success' && (
-                                    <div className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
-                                        <p className="text-green-800 dark:text-green-200 text-sm">
-                                            {submitMessage}
-                                        </p>
-                                    </div>
-                                )}
+          <Card className="border-neutral-200 bg-white p-8 text-neutral-900 shadow-sm">
+            <CardHeader className="pb-6">
+              <CardTitle className="flex items-center gap-2 text-2xl font-semibold text-neutral-900">
+                <HeadphonesIcon className="w-6 h-6 text-blue-600" />
+                {t.franchisePage.application.formTitle}
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <form onSubmit={onSubmit} className="space-y-6" ref={formRef}>
+                {/* Submit Status Messages */}
+                {submitStatus === "success" && (
+                  <div className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
+                    <p className="text-green-800 dark:text-green-200 text-sm">
+                      {submitMessage}
+                    </p>
+                  </div>
+                )}
 
-                                {submitStatus === 'error' && (
-                                    <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
-                                        <p className="text-red-800 dark:text-red-200 text-sm">
-                                            {submitMessage}
-                                        </p>
-                                    </div>
-                                )}
+                {submitStatus === "error" && (
+                  <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
+                    <p className="text-red-800 dark:text-red-200 text-sm">
+                      {submitMessage}
+                    </p>
+                  </div>
+                )}
 
-                                <FranchiseForm
-                                    buttonLabel={isSubmitting ? t.franchisePage.application.submittingButton : t.franchisePage.application.submitButton}
-                                    isSubmitting={isSubmitting}
-                                    ref={refToUse}
-                                />
-                            </form>
-                        </CardContent>
-                    </Card>
-                </div>
-            </div>
-        </section>
-    )
+                <FranchiseForm
+                  buttonLabel={
+                    isSubmitting
+                      ? t.franchisePage.application.submittingButton
+                      : t.franchisePage.application.submitButton
+                  }
+                  isSubmitting={isSubmitting}
+                  ref={refToUse}
+                />
+              </form>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+  );
 }
